@@ -1,6 +1,9 @@
 ##XYplorer
 *XYplorer support for Sublime Text*
 
+[*forked from [Binocular222/XYplorer-syntax-for-Sublime-Text
+](https://github.com/Binocular222/XYplorer-syntax-for-Sublime-Text)*]
+
 - ####INSTALL
 	- ##### With [Package Control](https://packagecontrol.io/)
 		+ open Command Palette (<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd>) and pick `Package Control: Add Repository`
