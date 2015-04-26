@@ -1,6 +1,6 @@
 <snippet>
 	<content>
-foreach(${1:\$item}, ${2:\$ListOfTokens}, ${3:"|"}) {
+foreach (${1:\$item}, ${2:\$ListOfTokens}, ${3:"|"}) {
 	$4;
 }
 	</content>

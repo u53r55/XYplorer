@@ -1,8 +1,8 @@
 <snippet>
 	<content>
-\$selitems = get("SelectedItemsPathNames", "|");
-foreach(\$item, \$selitems) {
-	$1;
+${1:\$selitems} = get("SelectedItemsPathNames", "|");
+foreach(${2:\$item}, ${1:\$selitems}) {
+	$3;
 }
 	</content>
 	<tabTrigger>feselitems</tabTrigger>
