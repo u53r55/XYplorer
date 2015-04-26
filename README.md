@@ -17,7 +17,7 @@
 
 - ####USAGE:
 	+ First of all open Preferences > Package Settings > XYplorer > Settings - User
-	+ and save the opened settings file with following content, taking care to use correct path to XYplorer installation folder
+	+ and save the opened settings file with following content, use correct path to XYplorer installation folder.
 	```js
 	{
 	"xypath": "P:\\ath\\to\\XYplorer"
