@@ -5,13 +5,12 @@
 	<key>uuid</key>
 	<string>77AC23B6-8A90-11D9-BAA4-000A9584EC8X</string>
 	<key>name</key>
-	<string>XYPlorer</string>
+	<string>XYplorer</string>
 	<key>scopeName</key>
 	<string>source.xys</string>
 	<key>fileTypes</key>
 		<array>
 		<string>xys</string>
-		<string>inc</string>
 		<string>xyi</string>
 		</array>
 
@@ -37,14 +36,14 @@
 			<key>name</key>
 			<string>entity.name.function.xys</string>   <!-- Some functions need round bracket such as abs() -->
 			<key>match</key>
-			<string>(?i)\b(?:abs|asc|attrstamp|base64encode|base64decode|catalogreport|ceil|chr|colorfilter|columnlayout|compare|confirm|copier|ctbicon|ctbname|ctbstate|datediff|eval|exists|extracttext|extratag|filesequal|filesize|filetype|floor|folderreport|foldersize|format|formatbytes|formatdate|formatlist|get|getkey|getpathcomponent|getsectionlist|gettoken|gettokenindex|hash|hexdump|hextodec|html|input|inputfile|inputfolder|inputselect|isset|isunicode|listfolder|listpane|loadlayout|md5|new|now|paperfolder|popupmenu|property|quote|rand|readfile|readurl|recase|refreshperms|regexmatches|regexreplace|renameitem|replace|replacelist|report|resolvepath|round|runret|savethumb|self|setcolumns|seticons|setlayout|strlen|strpos|strrepeat|substr|sync|tab|tabset|tagitems|taglist|toolbar|trim|urldecode|urlencode|utf8decode|utf8encode|writefile|zip_add|zip_extract|zip_list)(?=\()</string>    <!-- (?i) = Case-insensitive;  \b \b = whole-word   (?: = No backreference, just to improve speed-->
+			<string>(?i)\b(?:abs|asc|attrstamp|base64encode|base64decode|catalogreport|ceil|cell|chr|colorfilter|columnlayout|compare|confirm|copier|ctbicon|ctbname|ctbstate|datediff|eval|exists|extracttext|extratag|filesequal|filesize|filetype|floor|folderreport|foldersize|format|formatbytes|formatdate|formatlist|get|getinfo|getkey|getpathcomponent|getsectionlist|gettoken|gettokenindex|hash|hexdump|hextodec|html|input|inputfile|inputfolder|inputselect|isset|isunicode|listfolder|listpane|loadlayout|md5|new|now|paperfolder|popupmenu|property|quote|rand|readfile|readurl|recase|regexmatches|regexreplace|renameitem|replace|replacelist|report|resolvepath|round|row|runret|savethumb|self|setcolumns|seticons|setlayout|strlen|strpos|strrepeat|substr|sync|tab|tabset|tagitems|taglist|toolbar|trim|tweak|urldecode|urlencode|utf8decode|utf8encode|writefile|zip_add|zip_extract|zip_list)(?=\()</string>    <!-- (?i) = Case-insensitive;  \b \b = whole-word   (?: = No backreference, just to improve speed-->
 		</dict>
 
 		<dict>
 			<key>name</key>
 			<string>entity.name.function.xys</string>  <!-- Some functions don't need round bracket -->
 			<key>match</key>
-			<string>(?i)\b(?:assert|backupto|beep|box|br|break|button|catalogload|charview|continue|copy|copyas|copydata|copyitem|copytext|copyto|delete|download|DUAL:|echo|end|exit|filter|focus|fresh|freshhere|global|goto|hashlist|highlight|incr|internetflags|load|loadsearch|loadtree|makecoffee|moveas|moveto|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|sel|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|sortby|sound|status|sub|swapnames|tag|text|timestamp|unset|unthumb|wait|wipe|writepv)\b</string>    <!-- (?i) = Case-insensitive;  \b \b = whole-word   (?: = No backreference, just to improve speed-->
+			<string>(?i)\b(?:assert|backupto|beep|box|br|break|button|catalogload|charview|comparehash|comment|continue|copy|copyas|copydata|copyitem|copytext|copyto|delete|download|echo|edittags|end|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|makecoffee|moveas|moveto|msecs|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|writepv)\b</string>    <!-- (?i) = Case-insensitive;  \b \b = whole-word   (?: = No backreference, just to improve speed-->
 		</dict>
 
 		<dict>
@@ -58,7 +57,7 @@
 			<key>name</key>
 			<string>keyword.control.xys</string>
 			<key>match</key>
-			<string>\b(?i)(?:step|unstep|break|continue|while|if|else|elseif|foreach)\b</string>    <!-- (?i) = Case-insensitive;  \b = whole-word   (?: = No backreference, just to improve speed-->
+			<string>\b(?i)(?:step|unstep|break|continue|while|if|else|elseif|foreach|namespace|include)\b</string>    <!-- (?i) = Case-insensitive;  \b = whole-word   (?: = No backreference, just to improve speed-->
 		</dict>
 
 		<dict>
@@ -93,7 +92,7 @@
 			<key>name</key>
 			<string>keyword.operator</string>
 			<key>match</key>
-			<string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI\s|\sLikeI\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?&lt;!\w)&gt;|&lt;(?![\w&lt;])|\B&amp;?\W&amp;\B)</string>   <!--Match:  ! = || LikeI UnLikeI < > & && -->
+			<string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI?\s|\sLikeI?\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?&lt;!\w)&gt;|&lt;(?![\w&lt;])|\B&amp;?\W&amp;\B)</string>   <!--Match:  ! = || LikeI UnLikeI < > & && -->
 		</dict>
 
 		<dict>
@@ -105,7 +104,7 @@
 
 		<dict>
 			<key>comment</key>
-			<string>User defined function (in .inc file)</string>
+			<string>User defined function (in include file)</string>
 			<key>match</key>
 			<string>(?i)(^function )(.+)(\(.+)</string>
 			<key>captures</key>
