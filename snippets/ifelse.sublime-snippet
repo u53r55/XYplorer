@@ -1,0 +1,16 @@
+<snippet>
+	<content>
+if (${1:expression}) {
+	$2;
+}
+elseif (${3:expression}) {
+	$4;
+}
+else {
+	$5;
+}
+	</content>
+	<tabTrigger>ifelse</tabTrigger>
+	<scope>source.xys</scope>
+	<description>if/elseif/elseZ block</description>
+</snippet>
