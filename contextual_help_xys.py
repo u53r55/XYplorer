@@ -8,6 +8,8 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 		ScopeText = self.view.substr(self.view.extract_scope(CursorLocation.a))
 		if ScopeName == "source.xys UDF.xys":
 			self.view.window().run_command('goto_definition')
+		# elif ScopeName == "source.xys string":
+		#	self.view.window().run_command('goto_definition') # goto subscript symbol
 		elif ScopeName == "source.xys entity.name.function.xys":
 			# ScopeText = ScopeText.replace("#", "_")
 			arg = xypath + "\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_" + ScopeText
@@ -685,8 +687,8 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 
 		else:
 			# tofix
-			window.run_command("move_to", {"to": "hardeol"})        # Add new line
-			window.run_command("insert", {"characters": "\n"})      # Add new line
+			sublime.run_command("move_to", {"to": "hardeol"})        # Add new line
+			sublime.run_command("insert", {"characters": "\n"})      # Add new line
 
 # ::/idh_scripting_comref.htm#idh_sc_folderreport
 # mk:@MSITStore:C:\XYplorer\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_getpathcomponent

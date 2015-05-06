@@ -3,11 +3,12 @@
 if (${1:expression}) {
 	$2;
 }
-elseif (${3:expression}) {
-	$4;
-}
-else {
+${3:elseif (${4:expression}) {
 	$5;
+}}
+${6:else {
+	$7;
+}
 }
 	</content>
 	<tabTrigger>ifelse</tabTrigger>

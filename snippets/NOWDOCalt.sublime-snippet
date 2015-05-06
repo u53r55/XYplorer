@@ -1,6 +1,6 @@
 <snippet>
 	<content>
-&lt;&lt;&lt;'#${1:NOWDOC}'
+&lt;&lt;&lt;#'${1:NOWDOC}'
 $2#${1:NOWDOC};
 	</content>
 	<tabTrigger>nowdocalternative</tabTrigger>

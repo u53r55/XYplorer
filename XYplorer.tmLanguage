@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>uuid</key>
-	<string>77AC23B6-8A90-11D9-BAA4-000A9584EC8X</string>
 	<key>name</key>
 	<string>XYplorer</string>
 	<key>scopeName</key>
@@ -16,11 +14,12 @@
 
 	<key>patterns</key>
 	<array>
+
 		<dict>
 			<key>name</key>
 			<string>comment.line.xys</string>
 			<key>match</key>
-			<string>//.*$</string> <!-- removed url detection, unnecessary -->
+			<string>//.*</string> <!-- removed url detection, unnecessary -->
 		</dict>
 		<dict>
 			<key>name</key>
@@ -30,27 +29,19 @@
 			<key>end</key>
 			<string>\*/</string>
 		</dict>
+
 		<dict>
 			<key>name</key>
-			<string>string</string>
-			<key>begin</key>
-			<string>(&quot;|')</string>
-			<key>end</key>
-			<string>\1</string>
+			<string>entity.name.function.xys</string>   <!-- native functions,eg: abs(num) -->
+			<key>match</key>
+			<string>(?i)\b(?:abs|asc|attrstamp|base64encode|base64decode|caller|catalogreport|ceil|cell|chr|colorfilter|columnlayout|compare|confirm|copier|ctbicon|ctbname|ctbstate|datediff|eval|exists|extracttext|extratag|filesequal|filesize|filetype|floor|folderreport|foldersize|format|formatbytes|formatdate|formatlist|get|getinfo|getkey|getpathcomponent|getsectionlist|gettoken|gettokenindex|hash|hexdump|hextodec|html|input|inputfile|inputfolder|inputselect|isset|isunicode|listfolder|listpane|loadlayout|md5|new|now|paperfolder|popupmenu|property|quote|rand|readfile|readurl|recase|regexmatches|regexreplace|renameitem|replace|replacelist|report|resolvepath|round|row|runret|savethumb|self|setcolumns|seticons|setlayout|strlen|strpos|strrepeat|substr|sync|tab|tabset|tagitems|taglist|toolbar|trim|tweak|urldecode|urlencode|utf8decode|utf8encode|writefile|zip_add|zip_extract|zip_list)(?=\s*\()</string>
 		</dict>
 
 		<dict>
 			<key>name</key>
-			<string>entity.name.function.xys</string>   <!-- brace commands/functions,eg: abs(num) -->
+			<string>entity.name.function.xys</string>  <!-- native commands,eg: beep freq,time -->
 			<key>match</key>
-			<string>(?i)\b(?:abs|asc|attrstamp|base64encode|base64decode|catalogreport|ceil|cell|chr|colorfilter|columnlayout|compare|confirm|copier|ctbicon|ctbname|ctbstate|datediff|eval|exists|extracttext|extratag|filesequal|filesize|filetype|floor|folderreport|foldersize|format|formatbytes|formatdate|formatlist|get|getinfo|getkey|getpathcomponent|getsectionlist|gettoken|gettokenindex|hash|hexdump|hextodec|html|input|inputfile|inputfolder|inputselect|isset|isunicode|listfolder|listpane|loadlayout|md5|new|now|paperfolder|popupmenu|property|quote|rand|readfile|readurl|recase|regexmatches|regexreplace|renameitem|replace|replacelist|report|resolvepath|round|row|runret|savethumb|self|setcolumns|seticons|setlayout|strlen|strpos|strrepeat|substr|sync|tab|tabset|tagitems|taglist|toolbar|trim|tweak|urldecode|urlencode|utf8decode|utf8encode|writefile|zip_add|zip_extract|zip_list)(?=\()</string>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>entity.name.function.xys</string>  <!-- braceless commands,eg: beep freq,time -->
-			<key>match</key>
-			<string>(?i)\b(?:assert|backupto|beep|box|br|break|button|catalogload|charview|comparehash|comment|continue|copy|copyas|copydata|copyitem|copytext|copyto|delete|download|echo|edittags|end|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|makecoffee|moveas|moveto|msecs|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|writepv)\b</string>
+			<string>(?i)\b(?:assert|backupto|beep|box|br|break|button|call|catalogload|charview|comparehash|comment|continue|copy|copyas|copydata|copyitem|copytext|copyto|delete|download|echo|edittags|end|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|logtofile|makecoffee|moveas|moveto|msecs|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|sysicons|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|writepv)\b</string>
 		</dict>
 
 		<dict>
@@ -64,20 +55,20 @@
 			<key>name</key>
 			<string>keyword.control.xys</string>
 			<key>match</key>
-			<string>(?i)\b(?:step|unstep|break|continue|while|if|else|elseif|foreach)\b</string>
+			<string>(?i)\b(?:\?|\:|step|unstep|break|continue|while|if|else|elseif|foreach)\b</string>
 		</dict>
 
 		<dict>
 			<key>name</key>
 			<string>keyword.control.xys</string>
 			<key>match</key>
-			<string>(?i)^\s*include\b</string> <!-- include may be indented -->
+			<string>(?i)^\s*include\b</string> <!-- INCLUDE may be indented -->
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>keyword.control.xys</string>
 			<key>match</key>
-			<string>(?i)^namespace\b</string> <!-- namespace has to be left-aligned -->
+			<string>(?i)^namespace\b</string> <!-- NAMESPACE has to be left-aligned -->
 		</dict>
 
 		<dict>
@@ -91,7 +82,7 @@
 			<key>name</key>
 			<string>variable.parameter.native.xys</string>
 			<key>match</key>
-			<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%\w+%</string> <!-- removed {templates}, consider them as strings -->
+			<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string> <!-- removed {templates}, consider them as strings -->
 		</dict>
 
 		<dict>
@@ -105,15 +96,14 @@
 			<key>name</key>
 			<string>keyword.operator</string>
 			<key>match</key>
-			<string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI?\s|\sLikeI?\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?&lt;!\w)&gt;|&lt;(?![\w&lt;])|\B&amp;?\W&amp;\B)</string>   <!--Match:  ! = || LikeI? UnLikeI? AND OR NOT XOR < > & && -->
+			<string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI?\s|\sLikeI?\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?&lt;!\w)&gt;|&lt;(?![\w&lt;])|\B&amp;?\W&amp;\B)</string>   <!--Match:  ! = || LikeI? UnLikeI? AND OR NOT XOR < > && -->
 		</dict>
-
 
 		<dict>
 			<key>name</key>
 			<string>keyword.operator.nowdoc</string> <!-- radical nowdoc -->
 			<key>begin</key>
-			<string>&lt;{3}'([^#].*)'</string>
+			<string>&lt;{3}'([^#].*)'$</string>
 			<key>end</key>
 			<string>^\1;?$</string>
 		</dict>
@@ -121,7 +111,7 @@
 			<key>name</key>
 			<string>keyword.operator.nowdoc</string> <!-- regular nowdoc -->
 			<key>begin</key>
-			<string>&lt;{3}#'(.*)'</string>
+			<string>&lt;{3}#'(.*)'$</string>
 			<key>end</key>
 			<string>#\1</string>
 		</dict>
@@ -129,7 +119,7 @@
 			<key>name</key>
 			<string>keyword.operator.heredoc</string> <!-- radical heredoc -->
 			<key>begin</key>
-			<string>&lt;{3}(#.*)</string>
+			<string>&lt;{3}(#.*)$</string>
 			<key>end</key>
 			<string>\1</string>
 		</dict>
@@ -137,22 +127,35 @@
 			<key>name</key>
 			<string>keyword.operator.heredoc</string> <!-- regular heredoc -->
 			<key>begin</key>
-			<string>&lt;{3}([^#](.*))</string>
+			<string>&lt;{3}([^#](.*))$</string>
 			<key>end</key>
 			<string>^\1;?$</string>
 		</dict>
 
 		<dict>
-			<key>comment</key>
-			<string>User defined function (in include file)</string>
+			<key>name</key>
+			<string>string</string>	<!-- 
+			<key>begin</key>
+			<string>(&quot;|')</string>
+			<key>end</key>
+			<string>\1</string> -->
 			<key>match</key>
-			<string>(?i)(^\s*function )(.+)(\(.+)</string> <!-- function can be indented -->
+			<string>(&quot;|')(.*?)\1</string>
+		</dict>
+
+		<dict>
+			<key>comment</key>
+			<string>User-Defined function declaration</string>
+			<key>name</key>
+			<string>meta.class.UDF.xys</string>
+			<key>match</key>
+			<string>(?i)^\s*(function)\s+([\w:]+)(?=\s*\()</string> <!-- function can be indented. Removed final (.+) to hilite pararms -->
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.special.xys</string>
+					<string>keyword.control.xys</string> <!-- hilite FUNCTION as keyword -->
 				</dict>
 				<key>2</key>
 				<dict>
@@ -162,13 +165,28 @@
 			</dict>
 		</dict>
 
+		<!-- <dict>
+			<key>comment</key>
+			<string>subscripts</string>
+			<key>match</key>
+			<string>^\s*(&quot;.*?\1)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.class.subscript.xys</string>
+				</dict>
+			</dict>
+		</dict> -->
+
 		<dict>
 			<key>comment</key>
 			<string>Allow Contextual Help to Goto Definition</string>
 			<key>name</key>
 			<string>UDF.xys</string>
 			<key>match</key>
-			<string>(?&lt;=\s).+(?=\()</string>
+			<string>(?&lt;=\s)[\w:]+(?=\s*\()</string> <!-- (?<=\s).+(?=\() -->
 		</dict>
 
 	</array>

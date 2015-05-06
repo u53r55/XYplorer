@@ -21,6 +21,16 @@
 								"command": "open_file",
 								"args": {"file": "${packages}/User/XYplorer.sublime-settings"},
 								"caption": "Settings – User"
+							},
+							{
+								"command": "open_file",
+								"args": {"file": "${packages}/XYplorer/Xyplorer.sublime-build"},
+								"caption": "Build Settings – Default"
+							},
+							{
+								"command": "open_file",
+								"args": {"file": "${packages}/User/XYplorer.sublime-build"},
+								"caption": " Build Settings – User"
 							}
 						]
 					}
