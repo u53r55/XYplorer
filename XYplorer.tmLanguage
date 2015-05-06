@@ -46,7 +46,7 @@
 
 		<dict>
 			<key>name</key>
-			<string>entity.name.function.CommandID.xys</string>
+			<string>constant.CommandID.xys</string>
 			<key>match</key>
 			<string>(?&lt;!\w)#\d{1,4}(?!\w)</string>
 		</dict>
@@ -64,12 +64,46 @@
 			<key>match</key>
 			<string>(?i)^\s*include\b</string> <!-- INCLUDE may be indented -->
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>keyword.control.xys</string>
+
+		<!-- <dict>
 			<key>match</key>
-			<string>(?i)^namespace\b</string> <!-- NAMESPACE has to be left-aligned -->
+			<string>(?i)^(namespace)\s+(\w+)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.xys</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.section.xys</string>
+				</dict>
+			</dict>
+		</dict> -->
+		<dict>
+			<key>comment</key>
+			<string>namespace definition</string>
+			<key>match</key>
+			<string>(?i)^(namespace)\s+(\w+)$</string> <!-- namespace cmd must be unindented -->
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.xys</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.section.xys</string>
+				</dict>
+			</dict>
 		</dict>
+
 
 		<dict>
 			<key>name</key>
@@ -101,7 +135,7 @@
 
 		<dict>
 			<key>name</key>
-			<string>keyword.operator.nowdoc</string> <!-- radical nowdoc -->
+			<string>string.unquoted.nowdoc</string> <!-- radical nowdoc -->
 			<key>begin</key>
 			<string>&lt;{3}'([^#].*)'$</string>
 			<key>end</key>
@@ -109,7 +143,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>keyword.operator.nowdoc</string> <!-- regular nowdoc -->
+			<string>string.unquoted.nowdoc</string> <!-- regular nowdoc -->
 			<key>begin</key>
 			<string>&lt;{3}#'(.*)'$</string>
 			<key>end</key>
@@ -117,7 +151,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>keyword.operator.heredoc</string> <!-- radical heredoc -->
+			<string>string.unquoted.heredoc</string> <!-- radical heredoc -->
 			<key>begin</key>
 			<string>&lt;{3}(#.*)$</string>
 			<key>end</key>
@@ -125,13 +159,30 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>keyword.operator.heredoc</string> <!-- regular heredoc -->
+			<string>string.unquoted.heredoc</string> <!-- regular heredoc -->
 			<key>begin</key>
 			<string>&lt;{3}([^#](.*))$</string>
 			<key>end</key>
 			<string>^\1;?$</string>
 		</dict>
 
+		<dict>
+			<key>comment</key>
+			<string>matches subscript caption</string>
+			<key>name</key>
+			<string>string</string>
+			<key>match</key>
+			<string>^\s*(&quot;.*?&quot;)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.class.scriptcaption.xys</string>
+				</dict>
+			</dict>
+		</dict>
+		<!-- string scope defined afterwards so it does not consume subscriptcaption region -->
 		<dict>
 			<key>name</key>
 			<string>string</string>	<!-- 
@@ -146,16 +197,15 @@
 		<dict>
 			<key>comment</key>
 			<string>User-Defined function declaration</string>
-			<key>name</key>
-			<string>meta.class.UDF.xys</string>
 			<key>match</key>
-			<string>(?i)^\s*(function)\s+([\w:]+)(?=\s*\()</string> <!-- function can be indented. Removed final (.+) to hilite pararms -->
+			<string>(?i)^\s*(function)\s+([\w:]+)(?=\s*\()</string>
+			<!-- function can be indented. Removed final (.+) to hilite pararms -->
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.xys</string> <!-- hilite FUNCTION as keyword -->
+					<string>keyword.control.xys</string>
 				</dict>
 				<key>2</key>
 				<dict>
@@ -164,21 +214,6 @@
 				</dict>
 			</dict>
 		</dict>
-
-		<!-- <dict>
-			<key>comment</key>
-			<string>subscripts</string>
-			<key>match</key>
-			<string>^\s*(&quot;.*?\1)</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>meta.class.subscript.xys</string>
-				</dict>
-			</dict>
-		</dict> -->
 
 		<dict>
 			<key>comment</key>

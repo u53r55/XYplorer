@@ -2,20 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!-- index labelled scripts -->
 	<key>name</key>
-	<string>SymbolList</string>
+	<string>SymbolsSubScript</string>
 	<key>scope</key>
-	<string>source.xys meta.class.UDF.xys, source.xys meta.class.subscript.xys</string>
+	<string>source.xys meta.class.scriptcaption.xys</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<integer>1</integer>
-		<key>symbolTransformation</key>
-		<string>/(\w)/\L$1/g</string>   <!-- Convert to lower case -->
+		<!-- <key>symbolTransformation</key>
+		<string>/"(\w+)"/\1/g</string> -->   <!-- extract caption or label -->
 		<key>showInIndexedSymbolList</key>
-		<integer>1</integer>
-		<key>symbolIndexTransformation</key>
-		<string>/(\w)/\L$1/g</string>
+		<integer>0</integer>
 	</dict>
 </dict>
 </plist>
+

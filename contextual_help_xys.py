@@ -7,9 +7,10 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 		ScopeName = self.view.scope_name(CursorLocation.a).strip()
 		ScopeText = self.view.substr(self.view.extract_scope(CursorLocation.a))
 		if ScopeName == "source.xys UDF.xys":
+			# need to handle namespaces
 			self.view.window().run_command('goto_definition')
-		# elif ScopeName == "source.xys string":
-		#	self.view.window().run_command('goto_definition') # goto subscript symbol
+		elif ScopeName == "source.xys string":
+		 	self.view.window().run_command('goto_definition') # goto subscript symbol
 		elif ScopeName == "source.xys entity.name.function.xys":
 			# ScopeText = ScopeText.replace("#", "_")
 			arg = xypath + "\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_" + ScopeText
@@ -34,7 +35,7 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_foreachloops"])
 			else:
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm"])
-		elif ScopeName == "source.xys entity.name.function.CommandID.xys":
+		elif ScopeName == "source.xys constant.CommandID.xys":
 			# remember to strip 231-236 (New item template customizations) + 303...310 (thumbsizes)
 			# + 594,595 (Userprofile name)+ 862-867 (lbl names) + 442...464 (dates) + > 1400 (UDC)
 			CmdDict = {
