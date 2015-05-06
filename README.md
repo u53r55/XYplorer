@@ -10,9 +10,9 @@
 		- Now do `Package Control: Install Package`, search for and install `XYplorer`
 	+ **Without Package Control**
 		- Download this repo as [zip](https://github.com/SammaySarkar/XYplorer/archive/master.zip).
-		  There will be a folder inside the zip. Extract and rename the folder to `XYplorer` and move to * \Data\Packages\ *.
+		  There will be a folder inside the zip. Extract and rename the folder to `XYplorer` and move to ` \Data\Packages\ ` .
 		- ALTERNATIVELY, and *only if running Sublime Text 3*, zip up *the contents* inside of that `XYplorer` folder,
-		  rename the zip file to XYplorer.sublime-package and paste it to * \Data\Installed Packages\ *.
+		  rename the zip file to XYplorer.sublime-package and paste it to ` \Data\Installed Packages\ ` .
 
 - ####SETUP & USAGE:
 	+ open `Preferences > Package Settings > XYplorer > Settings - User`
@@ -25,7 +25,7 @@
 	+ Do the same with `Preferences > Package Settings > XYplorer > Build Settings - User` and this content.
 	```
 	{
-	"cmd": ["C:\\Program Files\\XYplorer\\XYplorer.exe", "", "/script=$file", "/flg=2"],
+	"cmd": ["P:\\ath\\to\\XYplorer\\XYplorer.exe", "", "/script=$file", "/flg=2"],
 	"selector": "source.xys"
 	}
 	```
