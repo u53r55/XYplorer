@@ -23,7 +23,7 @@
 	}
 	```
 	+ Do the same with `Preferences > Package Settings > XYplorer > Build Settings - User` and this content.
-	```
+	```js
 	{
 	"cmd": ["P:\\ath\\to\\XYplorer\\XYplorer.exe", "", "/script=$file", "/flg=2"],
 	"selector": "source.xys"
