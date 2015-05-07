@@ -55,7 +55,7 @@
 			<key>name</key>
 			<string>keyword.control.xys</string>
 			<key>match</key>
-			<string>(?i)\b(?:\?|\:|step|unstep|break|continue|while|if|else|elseif|foreach)\b</string>
+			<string>(?i)\b(?:step|unstep|break|continue|while|if|else|elseif|foreach)\b</string>
 		</dict>
 
 		<dict>
