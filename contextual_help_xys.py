@@ -21,9 +21,9 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_variables.htm"])
 		elif ScopeName == "source.xys keyword.operator":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_operatorprecedence"])
-		elif ScopeName == "source.xys keyword.operator.heredoc":
+		elif ScopeName == "source.xys string.unquoted.heredoc":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_heredoc"])
-		elif ScopeName == "source.xys keyword.operator.nowdoc":
+		elif ScopeName == "source.xys string.unquoted.nowdoc":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_heredoc"])
 		elif ScopeName == "source.xys keyword.control.xys":
 			ScopeTextLower = ScopeText.lower()

@@ -29,13 +29,14 @@
 	"selector": "source.xys"
 	}
 	```
-	+ the highlighter automatically activates in `*.xys, *.xyi` files.
+	+ the highlighter automatically activates in `*.xys, *.xyi, *.inc` files.
 	+ **Contextual help**
 		- CTRL+ENTER activates contextual help. Try it on native commands, Command IDs, control keywords, user-defined functions.
 			+ Native command or control structures: opens command help
 			+ Command IDs: associated menu caption is displayed in statusbar
-			+ UDFs: go to Definition.
-		- Add included files to project to use Go to Definition with functions defined in include files.
+			+ UDFs: Go to Definition. (see UDF note below)
+			+ labels in **sub** and **load**: goto the label. (Work-In-Progress)
+		- UDF note: add include files to project to use Go to Definition with functions defined in those files.
 
 	+ Doing `Tools > Build` will run the current script file in XYplorer.
 

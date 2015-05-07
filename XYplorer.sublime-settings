@@ -1,6 +1,7 @@
 {
-	"extensions":["xys","xyi"],
-	"default_encoding": "UTF-8",
+	"extensions":["xys","xyi","inc"],
+	// "default_encoding": "UTF-8",
+	"default_encoding": "UTF-16 LE with BOM",
 	"default_line_ending": "windows",
 	"ensure_newline_at_eof_on_save": true, //helps with include files
 	"match_brackets_angle": true,
