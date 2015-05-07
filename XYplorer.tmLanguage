@@ -46,9 +46,23 @@
 
 		<dict>
 			<key>name</key>
-			<string>constant.CommandID.xys</string>
+			<string>entity.name.function.CommandID.xys</string>
 			<key>match</key>
-			<string>(?&lt;!\w)#\d{1,4}(?!\w)</string>
+			<string>(?&lt;!\w)#\d{3,4}(?!\w)</string>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>variable.parameter.xys</string>
+			<key>match</key>
+			<string>\|:\w+|(?i)\$\w+|\{:(Text|Image|Photo|Audio|Video|Media|Font|Vector|Web|Office|Archive|Executable)\}</string>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>variable.parameter.native.xys</string>
+			<key>match</key>
+			<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string> <!-- removed {templates}, consider them as strings -->
 		</dict>
 
 		<dict>
@@ -83,20 +97,6 @@
 					<string>entity.name.section.xys</string>
 				</dict>
 			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>variable.parameter.xys</string>
-			<key>match</key>
-			<string>\|:\w+|(?i)\$\w+|\{:(Text|Image|Photo|Audio|Video|Media|Font|Vector|Web|Office|Archive|Executable)\}</string>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>variable.parameter.native.xys</string>
-			<key>match</key>
-			<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string> <!-- removed {templates}, consider them as strings -->
 		</dict>
 
 		<dict>
@@ -196,10 +196,11 @@
 			<key>comment</key>
 			<string>Allow Contextual Help to Goto Definition</string>
 			<key>name</key>
-			<string>UDF.xys</string>
+			<string>entity.name.function.UDF.xys</string>
 			<key>match</key>
 			<string>(?&lt;=\s)[\w:]+(?=\s*\()</string> <!-- (?<=\s).+(?=\() -->
 		</dict>
+
 
 	</array>
 </dict>
