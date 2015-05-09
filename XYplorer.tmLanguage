@@ -10,6 +10,7 @@
 		<array>
 		<string>xys</string>
 		<string>xyi</string>
+		<string>inc</string>
 		</array>
 
 	<key>patterns</key>
@@ -41,7 +42,7 @@
 			<key>name</key>
 			<string>entity.name.function.xys</string>  <!-- native commands,eg: beep freq,time -->
 			<key>match</key>
-			<string>(?i)\b(?:assert|backupto|beep|box|br|break|button|call|catalogload|charview|comparehash|comment|continue|copy|copyas|copydata|copyitem|copytext|copyto|delete|download|echo|edittags|end|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|logtofile|makecoffee|moveas|moveto|msecs|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|sysicons|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|writepv)\b</string>
+			<string>(?i)\b(?:assert|backupto|beep|box|br|button|call|catalogload|charview|comparehash|comment|copy|copyas|copydata|copyitem|copytext|copyto|delete|download|echo|edittags|end|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|logtofile|makecoffee|moveas|moveto|msecs|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|sysicons|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|writepv)\b</string>
 		</dict>
 
 		<dict>

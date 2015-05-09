@@ -205,19 +205,16 @@
 		// Native Variables
 		{ "trigger":"get\t<get>", "contents": "<get ${1:info} ${2:[param1]} ${3:[param2]}>"},
 		{ "trigger":"prop\t<prop>", "contents": "<prop ${1:property} ${2:[n]}>"},
-
 		{ "trigger": "date\t<date>", "contents": "<date$1>"},
 		{ "trigger": "datea\t<datea>", "contents": "<datea$1>"},
 		{ "trigger": "datec\t<datec>", "contents": "<datec$1>"},
 		{ "trigger": "dateexif\t<dateexif>", "contents": "<dateexif$1>"},
 		{ "trigger": "datem\t<datem>", "contents": "<datem$1>"},
-
 		{ "trigger": "cc_item\t<cc_item>", "contents": "<cc_item>"},
 		{ "trigger": "cc_name\t<cc_name>", "contents": "<cc_name>"},
 		{ "trigger": "cc_path\t<cc_path>", "contents": "<cc_path>"},
 		{ "trigger": "cc_ext\t<cc_ext>", "contents": "<cc_ext>"},
 		{ "trigger": "cc_isfolder\t<cc_isfolder>", "contents": "<cc_isfolder>"},
-
 		{ "trigger": "crlf\t<crlf>", "contents": "<crlf$1>"},
 		{ "trigger": "tab\t<tab>", "contents": "<tab$1>"},
 		{ "trigger": "clipboard\t<clipboard>", "contents": "<clipboard>"},
@@ -225,10 +222,8 @@
 		{ "trigger": "hwnd\t<hwnd>", "contents": "<hwnd>"},
 		{ "trigger": "taggedcolumn\t<taggedcolumn>", "contents": "<taggedcolumn>"},
 		{ "trigger": "taggeditem\t<taggeditem>", "contents": "<taggeditem>"},
-
 		{ "trigger": "path 1\t<path 1>", "contents": "<path 1>"},
 		{ "trigger": "path 2\t<path 2>", "contents": "<path 2>"},
-
 		{ "trigger": "xy\t<xy>", "contents": "<xy>"},
 		{ "trigger": "xyver\t<xyver>", "contents": "<xyver>"},
 		{ "trigger": "xyini\t<xyini>", "contents": "<xyini>"},
@@ -246,17 +241,14 @@
 		{ "trigger": "xytagdat\t<xytagdat>", "contents": "<xytagdat>"},
 		{ "trigger": "xythumbs\t<xythumbs>", "contents": "<xythumbs>"},
 		{ "trigger": "xycatalogs\t<xycatalogs>", "contents": "<xycatalogs>"},
-
 		{ "trigger": "base\t<base>", "contents": "<base>"},
 		{ "trigger": "item\t<item>", "contents": "<item$1>"}, //numbered items
 		{ "trigger": "items\t<items>", "contents": "<items>"},
 		{ "trigger": "title\t<title>", "contents": "<title>"},
-
 		{ "trigger": "pfaitem\t<pfaitem>", "contents": "<pfaitem>"},
 		{ "trigger": "focitem\t<focitem>", "contents": "<focitem>"},
 		{ "trigger": "selitem\t<selitem>", "contents": "<selitem>"},
 		{ "trigger": "selitems\t<selitems>", "contents": "<selitems>"},
-
 		{ "trigger": "curitem\t<curitem>", "contents": "<curitem>"},
 		{ "trigger": "curitem_dos\t<curitem_dos>", "contents": "<curitem_dos>"},
 		{ "trigger": "curitempath\t<curitempath>", "contents": "<curitempath>"},
@@ -272,7 +264,6 @@
 		{ "trigger": "curpath_dos\t<curpath_dos>", "contents": "<curpath_dos>"},
 		{ "trigger": "curpath_s\t<curpath_s>", "contents": "<curpath_s>"},
 		{ "trigger": "curtab\t<curtab>", "contents": "<curtab>"},
-
 		// savethumb-only variables, should only activate inside savethumb
 		// { "trigger": "percent\t<percent>", "contents": "<percent>"},
 		// { "trigger": "width\t<width>", "contents": "<width>"},
@@ -362,12 +353,12 @@
 		"OR",
 		"XOR",
 		"NOT",
-		
+
 		// misc
 		{ "trigger": "DUAL", "contents": "DUAL:${1:path1}||${2:path2}"},
 	]
 	// "scope" : "",
-	// "completions": 
+	// "completions":
 	// [
 	// ]
 }

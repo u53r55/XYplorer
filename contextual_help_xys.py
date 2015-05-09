@@ -10,11 +10,10 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 			# need to handle namespaces
 			self.view.window().run_command('goto_definition')
 		elif ScopeName == "source.xys string":
-		 	self.view.window().run_command('goto_definition') # goto subscript symbol
+			# goto subscript by label; needs huge refinement
+		 	self.view.window().run_command('goto_definition')
 		elif ScopeName == "source.xys entity.name.function.xys":
-			# ScopeText = ScopeText.replace("#", "_")
-			arg = xypath + "\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_" + ScopeText
-			subprocess.Popen(["hh.exe", arg])
+			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_" + ScopeText])
 		elif ScopeName == "source.xys variable.parameter.xys":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_variables"])
 		elif ScopeName == "source.xys variable.parameter.native.xys":
@@ -26,13 +25,15 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 		elif ScopeName == "source.xys string.unquoted.nowdoc":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_heredoc"])
 		elif ScopeName == "source.xys keyword.control.xys":
-			ScopeTextLower = ScopeText.lower()
+			ScopeTextLower = ScopeText.lower().strip('({')
 			if ScopeTextLower == "if" or ScopeTextLower == "elseif" or ScopeTextLower == "else":
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_ifthen"])
 			elif ScopeTextLower == "while":
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_whileloops"])
 			elif ScopeTextLower == "foreach":
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_foreachloops"])
+			elif ScopeTextLower == "step" or ScopeTextLower == "unstep" or ScopeTextLower == "break" or ScopeTextLower == "continue":
+				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_" + ScopeText])
 			else:
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm"])
 		elif ScopeName == "source.xys entity.name.function.CommandID.xys":
@@ -685,11 +686,11 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 				sublime.status_message(CmdDict[ScopeText])
 			else:
 				sublime.status_message(ScopeText + ": Command ID not recognized")
-
 		else:
-			# tofix
-			sublime.run_command("move_to", {"to": "hardeol"})        # Add new line
-			sublime.run_command("insert", {"characters": "\n"})      # Add new line
+			# Contextual_help is assigned to ctrl+enter, which coincides with
+			# ST's kb shortcut for new line macro. This is to compensate.
+			self.view.window().run_command("move_to", {"to": "hardeol"})        # Add new line
+			self.view.window().run_command("insert", {"characters": "\n"})      # Add new line
 
 # ::/idh_scripting_comref.htm#idh_sc_folderreport
 # mk:@MSITStore:C:\XYplorer\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_getpathcomponent
