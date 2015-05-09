@@ -8,7 +8,7 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 		ScopeText = self.view.substr(self.view.extract_scope(CursorLocation.a))
 		if ScopeName == "source.xys entity.name.function.UDF.xys":
 			# need to handle namespaces
-			self.view.window().run_command('goto_definition')
+			self.view.window().run_command('goto_definition', {"symbol" : ScopeText.lower()})
 		elif ScopeName == "source.xys string":
 			# goto subscript by label; needs huge refinement
 		 	self.view.window().run_command('goto_definition')
