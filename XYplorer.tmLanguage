@@ -56,7 +56,7 @@
 			<key>name</key>
 			<string>variable.parameter.xys</string>
 			<key>match</key>
-			<string>\|:\w+|(?i)\$\w+|\{:(Text|Image|Photo|Audio|Video|Media|Font|Vector|Web|Office|Archive|Executable)\}</string>
+			<string>(?i)\$[a-z_]\w*|\{:(Text|Image|Photo|Audio|Video|Media|Font|Vector|Web|Office|Archive|Executable)\}</string>
 		</dict>
 
 		<dict>
