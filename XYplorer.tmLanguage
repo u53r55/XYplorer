@@ -47,6 +47,63 @@
 
 		<dict>
 			<key>name</key>
+			<string>keyword.control.xys</string>
+			<key>match</key>
+			<string>(?i)^\s*include\b</string> <!-- INCLUDE may be indented -->
+		</dict>
+
+		<dict>
+			<key>comment</key>
+			<string>namespace definition</string>
+			<key>match</key>
+			<string>(?i)^(namespace)\s+(\w+)$</string> <!-- namespace cmd must be unindented -->
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.xys</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.section.xys</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>comment</key>
+			<string>User-Defined function declaration</string>
+			<key>match</key>
+			<string>(?i)^\s*(function)\s+([\w:]+)(?=\s*\()</string>
+			<!-- function can be indented -->
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.xys</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>meta.class.UDF.xys</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>comment</key>
+			<string>scope out unrecog functions to allow ctxhelp goto def</string>
+			<key>name</key>
+			<string>entity.name.function.UDF.xys</string>
+			<key>match</key>
+			<string>(?&lt;=\s)[\w:]+(?=\s*\()</string> <!-- (?<=\s).+(?=\() -->
+		</dict>
+
+		<dict>
+			<key>name</key>
 			<string>entity.name.function.CommandID.xys</string>
 			<key>match</key>
 			<string>(?&lt;!\w)#\d{3,4}(?!\w)</string>
@@ -75,33 +132,6 @@
 
 		<dict>
 			<key>name</key>
-			<string>keyword.control.xys</string>
-			<key>match</key>
-			<string>(?i)^\s*include\b</string> <!-- INCLUDE may be indented -->
-		</dict>
-
-		<dict>
-			<key>comment</key>
-			<string>namespace definition</string>
-			<key>match</key>
-			<string>(?i)^(namespace)\s+(\w+)$</string> <!-- namespace cmd must be unindented -->
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.control.xys</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.section.xys</string>
-				</dict>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>name</key>
 			<string>constant.numeric.xys</string>
 			<key>match</key>
 			<string>(?&lt;!\w)-?\d+[/%\.]?(?!\w)</string>  <!-- Original Regex: (?<!\w)-?\d+[/%\.]?(?!\w) Simpler RegEx: \b(\d+)\b -->
@@ -109,14 +139,14 @@
 
 		<dict>
 			<key>name</key>
-			<string>keyword.operator</string>
+			<string>keyword.operator.xys</string>
 			<key>match</key>
 			<string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI?\s|\sLikeI?\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?&lt;!\w)&gt;|&lt;(?![\w&lt;])|\B&amp;?\W&amp;\B)</string>   <!--Match:  ! = || LikeI? UnLikeI? AND OR NOT XOR < > && -->
 		</dict>
 
 		<dict>
 			<key>name</key>
-			<string>string.unquoted.nowdoc</string> <!-- radical nowdoc -->
+			<string>string.unquoted.nowdoc.xys</string> <!-- radical nowdoc -->
 			<key>begin</key>
 			<string>&lt;{3}'([^#].*)'$</string>
 			<key>end</key>
@@ -124,7 +154,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>string.unquoted.nowdoc</string> <!-- regular nowdoc -->
+			<string>string.unquoted.nowdoc.xys</string> <!-- regular nowdoc -->
 			<key>begin</key>
 			<string>&lt;{3}#'(.*)'$</string>
 			<key>end</key>
@@ -132,7 +162,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>string.unquoted.heredoc</string> <!-- radical heredoc -->
+			<string>string.unquoted.heredoc.xys</string> <!-- radical heredoc -->
 			<key>begin</key>
 			<string>&lt;{3}(#.*)$</string>
 			<key>end</key>
@@ -140,7 +170,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>string.unquoted.heredoc</string> <!-- regular heredoc -->
+			<string>string.unquoted.heredoc.xys</string> <!-- regular heredoc -->
 			<key>begin</key>
 			<string>&lt;{3}([^#](.*))$</string>
 			<key>end</key>
@@ -151,7 +181,7 @@
 			<key>comment</key>
 			<string>matches subscript caption</string>
 			<key>name</key>
-			<string>string</string>
+			<string>string.xys</string>
 			<key>match</key>
 			<string>^(&quot;.*?&quot;)</string>
 			<key>captures</key>
@@ -167,39 +197,9 @@
 
 		<dict>
 			<key>name</key>
-			<string>string</string>
+			<string>string.xys</string>
 			<key>match</key>
 			<string>(&quot;|')(.*?)\1</string>
-		</dict>
-
-		<dict>
-			<key>comment</key>
-			<string>User-Defined function declaration</string>
-			<key>match</key>
-			<string>(?i)^\s*(function)\s+([\w:]+)(?=\s*\()</string>
-			<!-- function can be indented. Removed final (.+) to hilite pararms -->
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.control.xys</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>meta.class.UDF.xys</string>
-				</dict>
-			</dict>
-		</dict>
-
-		<dict>
-			<key>comment</key>
-			<string>Allow Contextual Help to Goto Definition</string>
-			<key>name</key>
-			<string>entity.name.function.UDF.xys</string>
-			<key>match</key>
-			<string>(?&lt;=\s)[\w:]+(?=\s*\()</string> <!-- (?<=\s).+(?=\() -->
 		</dict>
 
 
