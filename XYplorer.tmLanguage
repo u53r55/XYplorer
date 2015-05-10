@@ -153,7 +153,7 @@
 			<key>name</key>
 			<string>string</string>
 			<key>match</key>
-			<string>^\s*(&quot;.*?&quot;)</string>
+			<string>^(&quot;.*?&quot;)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
