@@ -47,9 +47,27 @@
 
 		<dict>
 			<key>name</key>
-			<string>keyword.control.xys</string>
+			<string>entity.name.function.CommandID.xys</string>
 			<key>match</key>
-			<string>(?i)^\s*include\b</string> <!-- INCLUDE may be indented -->
+			<string>(?&lt;!\w)#\d{3,4}(?!\w)</string>
+		</dict>
+
+		<dict>
+			<key>match</key>
+			<string>(?i)^\s*(include)\s+(.+?)\s*;?\s*$</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.xys</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.other.INC.xys</string>
+				</dict>
+			</dict>
 		</dict>
 
 		<dict>
@@ -67,7 +85,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.section.xys</string>
+					<string>meta.class.NS.xys</string>
 				</dict>
 			</dict>
 		</dict>
@@ -76,7 +94,7 @@
 			<key>comment</key>
 			<string>User-Defined function declaration</string>
 			<key>match</key>
-			<string>(?i)^\s*(function)\s+([\w:]+)(?=\s*\()</string>
+			<string>(?i)^\s*(function)\s+(\w+)(?=\s*\()</string>
 			<!-- function can be indented -->
 			<key>captures</key>
 			<dict>
@@ -96,17 +114,22 @@
 		<dict>
 			<key>comment</key>
 			<string>scope out unrecog functions to allow ctxhelp goto def</string>
-			<key>name</key>
-			<string>entity.name.function.UDF.xys</string>
 			<key>match</key>
-			<string>(?&lt;=\s)[\w:]+(?=\s*\()</string> <!-- (?<=\s).+(?=\() -->
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>entity.name.function.CommandID.xys</string>
-			<key>match</key>
-			<string>(?&lt;!\w)#\d{3,4}(?!\w)</string>
+			<string>\b(?:(\w+)::)?(\w+)(?=\s*\().*</string>
+			<!-- <string>(?&lt;=\s)[\w:]+(?=\s*\()</string> -->
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+					<dict>
+						<key>name</key>
+						<string>entity.name.section.NS.xys</string>
+					</dict>
+				<key>2</key>
+					<dict>
+						<key>name</key>
+						<string>entity.name.function.UDF.xys</string>
+					</dict>
+			</dict>
 		</dict>
 
 		<dict>
@@ -120,7 +143,15 @@
 			<key>name</key>
 			<string>variable.parameter.native.xys</string>
 			<key>match</key>
-			<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string> <!-- removed {templates}, consider them as strings -->
+			<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string>
+		</dict>
+
+
+		<dict>
+			<key>name</key>
+			<string>constant.numeric.xys</string>
+			<key>match</key>
+			<string>(?&lt;!\w)-?\d+[/%\.]?(?!\w)</string>  <!-- Simpler: \b(\d+)\b -->
 		</dict>
 
 		<dict>
@@ -128,13 +159,6 @@
 			<string>keyword.control.xys</string>
 			<key>match</key>
 			<string>(?i)\b(?:step|unstep|break|continue|while|if|else|elseif|foreach)\b</string>
-		</dict>
-
-		<dict>
-			<key>name</key>
-			<string>constant.numeric.xys</string>
-			<key>match</key>
-			<string>(?&lt;!\w)-?\d+[/%\.]?(?!\w)</string>  <!-- Original Regex: (?<!\w)-?\d+[/%\.]?(?!\w) Simpler RegEx: \b(\d+)\b -->
 		</dict>
 
 		<dict>
@@ -180,28 +204,62 @@
 		<dict>
 			<key>comment</key>
 			<string>matches subscript caption</string>
-			<key>name</key>
-			<string>string.xys</string>
-			<key>match</key>
-			<string>^(&quot;.*?&quot;)</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
+			<key>begin</key>
+			<string>^(&quot;)</string>
+			<key>beginCaptures</key>
+			<dict><key>1</key><dict><key>name</key><string>string.quoted.xys</string></dict></dict>
+			<key>end</key>
+			<string>(&quot;)</string>
+			<key>endCaptures</key>
+			<dict><key>1</key><dict><key>name</key><string>string.quoted.xys</string></dict></dict>
+			<key>contentName</key>
+			<string>string.other.scriptcaption.xys</string>
+			<key>patterns</key>
+			<array>
 				<dict>
 					<key>name</key>
-					<string>meta.class.scriptcaption.xys</string>
+					<string>variable.parameter.xys</string>
+					<key>match</key>
+					<string>(?i)\|:\w+|\$[a-z_]\w*|(\s+:\s+\w+$)</string>
 				</dict>
-			</dict>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.native.xys</string>
+					<key>match</key>
+					<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string>
+				</dict>
+			</array>
 		</dict>
+
 		<!-- string scope defined afterwards so it does not consume subscriptcaption region -->
 
-		<dict>
-			<key>name</key>
-			<string>string.xys</string>
-			<key>match</key>
-			<string>(&quot;|')(.*?)\1</string>
+ 		<dict>
+			<key>begin</key>
+			<string>(&quot;|')</string>
+			<key>beginCaptures</key>
+			<dict><key>1</key><dict><key>name</key><string>string.quoted.xys</string></dict></dict>
+			<key>end</key>
+			<string>(\1)\1{0}</string> <!-- skip escaped quotes -->
+			<key>endCaptures</key>
+			<dict><key>1</key><dict><key>name</key><string>string.quoted.xys</string></dict></dict>
+			<key>contentName</key>
+			<string>string.quoted.xys</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.xys</string>
+					<key>match</key>
+					<string>(?i)\$[a-z_]\w*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.native.xys</string>
+					<key>match</key>
+					<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string>
+				</dict>
+			</array>
 		</dict>
-
 
 	</array>
 </dict>
