@@ -35,14 +35,14 @@
 			<key>name</key>
 			<string>entity.name.function.xys</string>   <!-- native functions,eg: abs(num) -->
 			<key>match</key>
-			<string>(?i)\b(?:abs|asc|attrstamp|base64encode|base64decode|caller|catalogreport|ceil|cell|chr|colorfilter|columnlayout|compare|confirm|copier|ctbicon|ctbname|ctbstate|datediff|eval|exists|extracttext|extratag|filesequal|filesize|filetype|floor|folderreport|foldersize|format|formatbytes|formatdate|formatlist|get|getinfo|getkey|getpathcomponent|getsectionlist|gettoken|gettokenindex|hash|hexdump|hextodec|html|input|inputfile|inputfolder|inputselect|isset|isunicode|listfolder|listpane|loadlayout|md5|new|now|paperfolder|popupmenu|property|quote|rand|readfile|readurl|recase|regexmatches|regexreplace|renameitem|replace|replacelist|report|resolvepath|round|row|runret|savethumb|self|setcolumns|seticons|setlayout|strlen|strpos|strrepeat|substr|sync|tab|tabset|tagitems|taglist|toolbar|trim|tweak|urldecode|urlencode|utf8decode|utf8encode|writefile|zip_add|zip_extract|zip_list)(?=\s*\()</string>
+			<string>(?i)\b(?:abs|asc|attrstamp|base64decode|base64encode|caller|catalogreport|ceil|cell|chr|colorfilter|columnlayout|compare|confirm|copier|ctbicon|ctbname|ctbstate|datediff|eval|exists|extracttext|extratag|filesequal|filesize|filetype|floor|folderreport|foldersize|format|formatbytes|formatdate|formatlist|get|getinfo|getkey|getpathcomponent|getsectionlist|gettoken|gettokenindex|hash|hexdump|hextodec|html|input|inputfile|inputfolder|inputselect|isset|isunicode|listfolder|listpane|loadlayout|md5|new|now|paperfolder|popupmenu|property|quote|rand|readfile|readurl|recase|regexmatches|regexreplace|renameitem|replace|replacelist|report|resolvepath|round|row|runret|savethumb|self|setcolumns|seticons|setlayout|strlen|strpos|strrepeat|substr|sync|tab|tabset|tagitems|taglist|toolbar|trim|tweak|urldecode|urlencode|utf8decode|utf8encode|writefile|zip_add|zip_extract|zip_list)(?=\s*\()</string>
 		</dict>
 
 		<dict>
 			<key>name</key>
 			<string>entity.name.function.xys</string>  <!-- native commands,eg: beep freq,time -->
 			<key>match</key>
-			<string>(?i)\b(?:assert|backupto|beep|box|br|button|call|catalogload|charview|comparehash|comment|copy|copyas|copydata|copyitem|copytext|copyto|delete|download|echo|edittags|end|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|logtofile|makecoffee|moveas|moveto|msecs|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|sysicons|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|writepv)\b</string>
+			<string>(?i)\b(?:assert|backupto|beep|box|br|button|call|catalogload|charview|comparehash|comment|copy|copyas|copydata|copyitem|copytext|copyto|delete|deletefile|download|echo|edittags|end|enumshellfolderitems|error|escapeunicode|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|logchange|logon|logtofile|makecoffee|moveas|moveto|msecs|msg|open|openwith|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selpos|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|sysicons|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|wmcopydata|writepv)\b</string>
 		</dict>
 
 		<dict>
@@ -129,7 +129,7 @@
 			<key>name</key>
 			<string>variable.parameter.native.xys</string>
 			<key>match</key>
-			<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string>
+			<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
 		</dict>
 
 		<dict>
@@ -191,6 +191,21 @@
 			<string>&lt;{3}(#.*)$</string>
 			<key>end</key>
 			<string>\1</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.xys</string>
+					<key>match</key>
+					<string>(?i)\$[a-z_]\w*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.native.xys</string>
+					<key>match</key>
+					<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -199,6 +214,21 @@
 			<string>&lt;{3}([^#](.*))$</string>
 			<key>end</key>
 			<string>^\1;?$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.xys</string>
+					<key>match</key>
+					<string>(?i)\$[a-z_]\w*</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.native.xys</string>
+					<key>match</key>
+					<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
+				</dict>
+			</array>
 		</dict>
 
 		<dict>
@@ -238,12 +268,10 @@
 					<key>name</key>
 					<string>variable.parameter.native.xys</string>
 					<key>match</key>
-					<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string>
+					<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
 				</dict>
 			</array>
 		</dict>
-
-		<!-- string scope defined afterwards so it does not consume subscriptcaption region -->
 
  		<dict>
 			<key>begin</key>
@@ -266,7 +294,7 @@
 					<string>string.quoted.xys</string>
 				</dict>
 			</dict>
-			<key>contentName</key>
+			<key>name</key>
 			<string>string.quoted.xys</string>
 			<key>patterns</key>
 			<array>
