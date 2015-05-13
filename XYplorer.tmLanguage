@@ -234,26 +234,12 @@
 		<dict>
 			<key>comment</key>
 			<string>matches subscript caption</string>
+			<key>name</key>
+			<string>string.quoted.xys</string>
 			<key>begin</key>
 			<string>^(&quot;)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted.xys</string>
-				</dict>
-			</dict>
 			<key>end</key>
-			<string>(&quot;)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted.xys</string>
-				</dict>
-			</dict>
+			<string>\1</string>
 			<key>contentName</key>
 			<string>string.other.scriptcaption.xys</string>
 			<key>patterns</key>
@@ -276,24 +262,8 @@
  		<dict>
 			<key>begin</key>
 			<string>(&quot;|')</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted.xys</string>
-				</dict>
-			</dict>
 			<key>end</key>
-			<string>(\1)\1{0}</string> <!-- skip escaped quotes -->
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted.xys</string>
-				</dict>
-			</dict>
+			<string>\1\1{0}</string> <!-- skip escaped quotes -->
 			<key>name</key>
 			<string>string.quoted.xys</string>
 			<key>patterns</key>

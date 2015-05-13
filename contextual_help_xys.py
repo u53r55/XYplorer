@@ -10,12 +10,12 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 			# need to handle namespaces
 			self.view.window().run_command('goto_definition', {"symbol" : ScopeText.lower() + '  [udf]'})
 		elif ScopeName == "source.xys entity.name.section.NS.xys":
-			self.view.window().run_command('goto_definition', {"symbol" : ScopeText.lower() + '   [ns]'})
+			self.view.window().run_command('goto_definition', {"symbol" : ScopeText.lower() + '  [ns]'})
 		elif ScopeName == "source.xys entity.name.function.xys":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_" + ScopeText])
-		elif ScopeName == "source.xys variable.parameter.xys":
+		elif "variable.parameter.xys" in ScopeName:
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_variables"])
-		elif ScopeName == "source.xys variable.parameter.native.xys":
+		elif "variable.parameter.native.xys" in ScopeName:
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_variables.htm"])
 		elif ScopeName == "source.xys keyword.operator.xys":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_operatorprecedence"])
