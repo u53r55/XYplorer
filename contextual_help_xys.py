@@ -17,6 +17,8 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_variables"])
 		elif "variable.parameter.native.xys" in ScopeName:
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_variables.htm"])
+		elif "string.other.scriptcaption.xys" in ScopeName:
+			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_xysadv"])
 		elif ScopeName == "source.xys keyword.operator.xys":
 			subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_operatorprecedence"])
 		elif ScopeName == "source.xys string.unquoted.heredoc.xys" or ScopeName == "source.xys string.unquoted.nowdoc.xys":
