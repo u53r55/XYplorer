@@ -56,7 +56,7 @@
 			<key>name</key>
 			<string>entity.name.function.CommandID.xys</string>
 			<key>match</key>
-			<string>(?&lt;!\w)#\d{3,4}(?!\w)</string>
+			<string>(?&lt;!\w)#\d{1,4}(?!\w)</string>
 		</dict>
 
 		<dict>
