@@ -31,12 +31,17 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_whileloops"])
 			elif ScopeTextLower == "foreach":
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm#idh_scripting_foreachloops"])
-			elif ScopeTextLower == "step" or ScopeTextLower == "unstep" or ScopeTextLower == "break" or ScopeTextLower == "continue":
+			elif ScopeTextLower == "step" or ScopeTextLower == "unstep" \
+					or ScopeTextLower == "break" or ScopeTextLower == "continue":
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_" + ScopeText])
 			else:
 				subprocess.Popen(["hh.exe", xypath + "\\XYplorer.chm::/idh_scripting.htm"])
 		elif ScopeName == "source.xys entity.name.function.CommandID.xys":
-			CmdDict = eval( "{" + sublime.load_resource("Packages/XYplorer/cmdIDs.txt") + "}")
+			if sublime.version()[0] == '2':
+				cmdIDList = open(sublime.packages_path() + '\\XYplorer\\cmdIDs.txt', 'r')
+				CmdDict = eval( '{' + cmdIDList.read() + '}' ); cmdIDList.close()
+			else:
+				CmdDict = eval( '{' + sublime.load_resource("Packages/XYplorer/cmdIDs.txt") + '}' )
 			if ScopeText in CmdDict:
 				sublime.status_message(CmdDict[ScopeText])
 			else:

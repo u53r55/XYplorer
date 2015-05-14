@@ -362,7 +362,7 @@
 		"NOT",
 
 		// misc
-		{ "trigger": "DUAL", "contents": "DUAL:${1:path1}||${2:path2}"},
+		{ "trigger": "DUAL", "contents": "DUAL:${1:path1}||${2:path2}"}
 	]
 	// "scope" : "",
 	// "completions":
