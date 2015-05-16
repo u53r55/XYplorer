@@ -81,7 +81,7 @@
 			<key>comment</key>
 			<string>namespace definition</string>
 			<key>match</key>
-			<string>(?i)^(namespace)\s+(\w+)$</string> <!-- namespace cmd must be unindented -->
+			<string>(?i)^\s*(namespace)\s+(\w+)$</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
