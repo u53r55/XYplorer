@@ -38,11 +38,11 @@
 			+ other language structures: opens associated location in XYplorer help file
 			+ labels in **sub** and **load**: goto the label. (Work-In-Progress)
 		- UDF note: add include files to project to use Go to Definition with functions defined in those files.
-
 	+ **Tips**
 		- SubScripts, User-Defined Functions and Namespace declarations are listed in Symbols.
 		- To assign XYplorer icon to .xys files in sidebar:
 			- Create an XYplorer icon in png format and save to `\Data\Packages\Theme - Default\icons\file_type_xys.png`
 			- an example png icon is supplied with this package.
+	+ (Some features like Goto Definition, SymbolList etc are not available in ST2)
 
 *Happy XYScripting!*
