@@ -119,17 +119,12 @@
 		</dict>
 
 		<dict>
-			<key>name</key>
-			<string>variable.parameter.xys</string>
-			<key>match</key>
-			<string>(?i)\$[a-z_]\w*|\{:(Text|Image|Photo|Audio|Video|Media|Font|Vector|Web|Office|Archive|Executable)\}</string>
+			<key>include</key>
+			<string>#variables</string>
 		</dict>
-
 		<dict>
-			<key>name</key>
-			<string>variable.parameter.native.xys</string>
-			<key>match</key>
-			<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
+			<key>include</key>
+			<string>#variables-native</string>
 		</dict>
 
 		<dict>
@@ -194,16 +189,12 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.xys</string>
-					<key>match</key>
-					<string>(?i)\$[a-z_]\w*</string>
+					<key>include</key>
+					<string>#variables</string>
 				</dict>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.native.xys</string>
-					<key>match</key>
-					<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
+					<key>include</key>
+					<string>#variables-native</string>
 				</dict>
 			</array>
 		</dict>
@@ -217,16 +208,12 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.xys</string>
-					<key>match</key>
-					<string>(?i)\$[a-z_]\w*</string>
+					<key>include</key>
+					<string>#variables</string>
 				</dict>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.native.xys</string>
-					<key>match</key>
-					<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
+					<key>include</key>
+					<string>#variables-native</string>
 				</dict>
 			</array>
 		</dict>
@@ -245,16 +232,12 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.xys</string>
-					<key>match</key>
-					<string>(?i)\|:\w+|\$[a-z_]\w*|(\s+:\s+\w+$)</string>
+					<key>include</key>
+					<string>#variables</string>
 				</dict>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.native.xys</string>
-					<key>match</key>
-					<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
+					<key>include</key>
+					<string>#variables-native</string>
 				</dict>
 			</array>
 		</dict>
@@ -269,20 +252,36 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.xys</string>
-					<key>match</key>
-					<string>(?i)\$[a-z_]\w*</string>
+					<key>include</key>
+					<string>#variables</string>
 				</dict>
 				<dict>
-					<key>name</key>
-					<string>variable.parameter.native.xys</string>
-					<key>match</key>
-					<string>&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[A-Za-z0-9()_-]+%</string>
+					<key>include</key>
+					<string>#variables-native</string>
 				</dict>
 			</array>
 		</dict>
 
 	</array>
+
+
+	<key>repository</key>
+	<dict>
+		<key>variables</key>
+		<dict>
+			<key>name</key>
+			<string>variable.parameter.xys</string>
+			<key>match</key>
+			<string>(?i)\$[a-z_]\w*</string>
+		</dict>
+		<key>variables-native</key>
+		<dict>
+			<key>name</key>
+			<string>variable.parameter.native.xys</string>
+			<key>match</key>
+			<string>(?i)&lt;[ .,\*\|\#\:\-\+\w]+&gt;|%[\w-]+%</string>
+		</dict>
+	</dict>
+
 </dict>
 </plist>
