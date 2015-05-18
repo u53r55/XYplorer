@@ -20,6 +20,7 @@
 	```js
 	{
 	"xypath": "P:\\ath\\to\\XYplorer"
+	"xyscripts": "P:\\ath\\to\\XYScripts"
 	}
 	```
 	+ Do the same with `Preferences > Package Settings > XYplorer > Build Settings - User` and this content.
@@ -35,6 +36,7 @@
 		- CTRL+ENTER triggers contextual help. Try it on everything: native keywords, commandIDs, user-defined functions...
 			+ Command IDs: associated menu caption is displayed in statusbar
 			+ UDFs: Go to Definition. (see UDF note below)
+			+ INCLUDE statement: goto included file (*remember to set corect 'xyscripts' path in package settings*)
 			+ other language structures: opens associated location in XYplorer help file
 			+ labels in **sub** and **load**: goto the label. (Work-In-Progress)
 		- UDF note: add include files to project to use Go to Definition with functions defined in those files.
