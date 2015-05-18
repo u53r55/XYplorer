@@ -1,6 +1,6 @@
 <snippet>
 	<content>
-<![CDATA[&lt;&lt;&lt;'${1:NOWDOC}'
+<![CDATA[<<<'${1:NOWDOC}'
 $2
 ${1:NOWDOC};]]>
 	</content>
