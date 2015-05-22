@@ -4,6 +4,7 @@ ST2 = (sublime.version()[0] == '2')
 
 class contextual_help_xys(sublime_plugin.TextCommand):
 	def run(self, edit):
+		# import spdb ; spdb.start()
 		xypath = self.view.settings().get('xypath')
 		CursorLocation = self.view.sel()[0]
 		ScopeName = self.view.scope_name(CursorLocation.a).strip()
@@ -19,9 +20,9 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 			else:	sublime.status_message('Cannot open file: ' + IncludeFile)
 		elif ScopeName == 'source.xys entity.name.function.UDF.xys':
 			# need to handle namespaces
-			self.view.window().run_command('goto_definition', {'symbol' : ScopeText.lower() + '  [udf]'})
+			self.view.window().run_command('goto_definition', {'symbol' : 'UDF: ' + ScopeText.lower()})
 		elif ScopeName == 'source.xys entity.name.section.NS.xys':
-			self.view.window().run_command('goto_definition', {'symbol' : ScopeText.lower() + '  [ns]'})
+			self.view.window().run_command('goto_definition', {'symbol' : 'NS: ' + ScopeText.lower()})
 		elif ScopeName == 'source.xys entity.name.function.xys':
 			subprocess.Popen(['hh.exe', xypath + '\\XYplorer.chm::/idh_scripting_comref.htm#idh_sc_' + ScopeText])
 		elif 'variable.parameter.xys' in ScopeName:
