@@ -351,6 +351,7 @@
 		// Pre-Processors
 		{"trigger": "namespace", "contents": "NAMESPACE ${1:name}"},
 		{"trigger": "include", "contents": "INCLUDE \"${1:inc\\inc.xyi}\";"},
+		{"trigger": "include_once", "contents": "INCLUDE_ONCE \"${1:inc\\inc.xyi}\";"},
 
 		// Operators
 		"LikeI",
