@@ -72,7 +72,7 @@
 		{"trigger": "regexreplace", "contents": "regexreplace(${1:string}, ${2:pattern}, ${3:replacement}, ${4:[matchcase=0]});"},
 		{"trigger": "renameitem", "contents": "renameitem(${1:newname}, ${2:[sourceitem=<curitem>]}, ${3:[flags=0 +1+2+4]}, ${4:[numsuffix]});"},
 		{"trigger": "replace", "contents": "replace(${1:string}, ${2:search}, ${3:[replace=\"\"]}, ${4:[matchcase=0]}, ${5:[start=1]}, ${6:[count=-1]});"},
-		{"trigger": "replacelist", "contents": "replacelist(${1:string}, ${2:searchlist}, ${3:[replacelist]}, ${4:[separator]}, ${5:[matchcase=0]});"},
+		{"trigger": "replacelist", "contents": "replacelist(${1:string}, ${2:searchlist}, ${3:[replacelist]}, ${4:[separator]}, ${5:[matchcase=0]}, ${6:[scope=0 |1|2]});"},
 		{"trigger": "report", "contents": "report(${1:[template]}, ${2:[itemlist]}, ${3:[header]}, ${4:[footer]});"},
 		{"trigger": "resolvepath", "contents": "resolvepath(${1:[path=base]}, ${2:[base=<xypath>\\]}, ${3:[abs2rel=0]});"},
 		{"trigger": "round", "contents": "round(${1:number}, ${2:[precision=0]});"},
