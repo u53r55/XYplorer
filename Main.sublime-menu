@@ -22,6 +22,7 @@
 								"args": {"file": "${packages}/XYplorer/XYplorer.sublime-build"},
 								"caption": "Build Settings – Default"
 							},
+							{	"caption": "-", "id": "packagecommands"},
 							{
 								"command": "open_file",
 								"args": {"file": "${packages}/User/Xyplorer.sublime-settings"},
