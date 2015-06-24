@@ -41,7 +41,7 @@
 			<key>name</key>
 			<string>entity.name.function.xys</string>  <!-- native commands,eg: beep freq,time -->
 			<key>match</key>
-			<string>(?i)\b(?:assert|backupto|beep|box|br|button|call|catalogload|charview|comparehash|comment|copy|copyas|copydata|copyitem|copytext|copyto|delete|deletefile|download|echo|edittags|end|enumshellfolderitems|error|escapeunicode|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|logchange|logon|logtofile|makecoffee|moveas|moveto|msecs|msg|open|openwith|pasteto|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selpos|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|sysicons|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|wmcopydata|writepv)\b</string>
+			<string>(?i)\b(?:assert|backupto|beep|box|br|button|call|catalogload|charview|comparehash|comment|copy|copyas|copydata|copyitem|copytext|copyto|delete|deletefile|download|echo|edittags|end|enumshellfolderitems|error|escapeunicode|exist|exit|filter|focus|fresh|freshhere|global|goto|hashlist|help|highlight|incr|info|internetflags|load|loadsearch|loadtree|logchange|logon|logtofile|makecoffee|moveas|moveto|msecs|msg|obfuscate|open|openwith|pasteto|perm|popupmainmenu|quickfileview|readpv|releaseglobals|rename|return|rotate|rtfm|run|savesettings|screen|sel|selpos|selectitems|selfilter|seltab|sendkeys|set|setkey|setting|settingp|showhash|showshellprops|snippet|sortby|sound|status|sub|swapnames|sysicons|tag|text|timestamp|unset|unthumb|userbutton|wait|winpos|winsize|wipe|wmcopydata|writepv)\b</string>
 		</dict>
 
 		<dict>

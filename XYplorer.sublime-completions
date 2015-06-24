@@ -37,7 +37,7 @@
 		{"trigger": "formatdate", "contents": "formatdate(${1:[date=now]}, ${2:[format]}, ${3:[shift_unit y|m|w|d|h|n|s]}, ${4:[shift_num]});"},
 		{"trigger": "formatlist", "contents": "formatlist(${1:list}, ${2:[format=tusrcnvxedfqp]}, ${3:[separator=|]}, ${4:[param]}, ${5:[flags= |f]});"},
 		// get() needs special treatment
-		{"trigger": "get", "contents": "get(${1:Alias|BytesSelected|BytesTotal|ClipboardFormats|CmdLine|CmdLineUser|CopiedData|CountIcons|CountItems|CountSelected|CurItem|CurItemPrev|Drop|DriveLetter|DriveName|Drives|Find_Contents|FocusedControl|FocusedPos|FreeSpace|GenericFileType|Instance|Item|List_CopyTo|List_HiliteFolder|List_RecentLocations|List_RecentlyOpenedFiles|MenuCaption|LoadTimes|Pane|Path|PropertyIndex|RegCmd|Screen|SelectedItemsPathNames|SelectedItemsNames|Sort|SpecialFolder|SpotPatterns|Status|Tabs|Tabs_SF|Tree|Trigger|UsedSpace|Username|UserRole|UTCOffset|View|VisualFilter|#CmdID}, ${2:[param1]}, ${3:[param2]});"},
+		{"trigger": "get", "contents": "get(${1:Alias|BytesSelected|BytesTotal|ClipboardFormats|CmdLine|CmdLineUser|CopiedData|CountIcons|CountItems|CountSelected|CurItem|CurItemPrev|Drop|DriveLetter|DriveName|Drives|Find_Contents|FocusedControl|FocusedPos|FreeSpace|GenericFileType|Instance|Item|List_CopyTo|List_HiliteFolder|List_RecentLocations|List_RecentlyOpenedFiles|MenuCaption|LoadTimes|Pane|Path|PropertyIndex|RegCmd|Screen|SelectedItemsPathNames|SelectedItemsNames|Sort|SpecialFolder|SpotPatterns|Status|Tabs|Tabs_SF|TargetItems|Tree|Trigger|UsedSpace|Username|UserRole|UTCOffset|View|VisualFilter|#CmdID}, ${2:[param1]}, ${3:[param2]});"},
 		{"trigger": "getinfo", "contents": "getinfo(${1:info}, ${2:[param1]}, ${3:[param2]}));"},
 		{"trigger": "getkey", "contents": "getkey(${1:key}, ${2:section}, ${3:[INI=<xyini>]}, ${4:[UseXyAlgo=0]});"},
 		{"trigger": "getpathcomponent", "contents": "getpathcomponent(${1:[path]}, ${2:[path |drive|parent|file|base|ext|server|count|component]}, ${3:[index=1]});"},
@@ -151,6 +151,7 @@
 		{"trigger": "moveto", "contents": "moveto ${1:[location=<curpath>]}, ${2:[source]}, ${3:[rootpath]}, ${4:[flags=0 +1+2]};"},
 		{"trigger": "msecs", "contents": "msecs ${1:[show=|0|1]}, ${2:[decimals=3]}, ${3:[cropNulls=0]};"},
 		{"trigger": "msg", "contents": "msg ${1:text}, ${2:[buttons=0 |1]}, ${3:[linebreaker=<br>]};"},
+        {"trigger": "obfuscate", "contents": "obfuscate ${1:[toggle=|0|1]}, ${2:[char=chr(0x2022)]};"},
 		{"trigger": "open", "contents": "open ${1:item}, ${2:[Windows= |w]};"},
 		{"trigger": "openwith", "contents": "openwith ${1:application}, ${2:[mode=s |m]}, ${3:[itemlist]};"},
 		{"trigger": "pasteto", "contents": "pasteto ${1:[destination]};"},
