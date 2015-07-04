@@ -10,7 +10,10 @@ class contextual_help_xys(sublime_plugin.TextCommand):
 		ScopeName = self.view.scope_name(CursorLocation.a).strip()
 		ScopeText = self.view.substr(self.view.extract_scope(CursorLocation.a))
 		if 'string.other.INC.xys' in ScopeName: # goto include file
-			IncludeFile = path.expandvars(ScopeText).strip('\'\"')
+			IncludeFile = path.expandvars(ScopeText)
+			#strip syntactical quotes
+			if (IncludeFile[0] == IncludeFile[-1]) and (IncludeFile[0] in ['"',"'"]):
+				IncludeFile = IncludeFile.strip('"\'')
 			if not path.isabs(IncludeFile):
 				xyscripts = self.view.settings().get('xyscripts')
 				if not xyscripts:	# TODO: get scripts path from startup.ini
