@@ -14,7 +14,7 @@
 						[
 							{
 								"command": "open_file",
-								"args": {"file": "${packages}/XYplorer/Xyplorer.sublime-settings"},
+								"args": {"file": "${packages}/XYplorer/XYplorer.sublime-settings"},
 								"caption": "Settings – Default"
 							},
 							{
@@ -25,7 +25,7 @@
 							{	"caption": "-", "id": "packagecommands"},
 							{
 								"command": "open_file",
-								"args": {"file": "${packages}/User/Xyplorer.sublime-settings"},
+								"args": {"file": "${packages}/User/XYplorer.sublime-settings"},
 								"caption": "Settings – User"
 							},
 							{
