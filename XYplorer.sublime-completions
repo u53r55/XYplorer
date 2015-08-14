@@ -45,6 +45,7 @@
 		{"trigger": "getsectionlist", "contents": "getsectionlist(${1:[section]}, ${2:[ini=<xyini>]}, ${3:[separator=<crlf>]});"},
 		{"trigger": "gettoken", "contents": "gettoken(${1:string}, ${2:[index=1 |'count'|number]}, ${3:[separator=\" \"]}, ${4:[format= t]}, ${5:[flags=0 +1+2]});"},
 		{"trigger": "gettokenindex", "contents": "gettokenindex(${1:token}, ${2:tokenlist}, ${3:[separator=|]}, ${4:[flags=iw c]});"},
+		{"trigger": "ghost", "contents": "ghost(${1:[patterns]}, ${2:[toggle= |1|0|-1]});"},
 		{"trigger": "hash", "contents": "hash(${1:[algo=md5 |crc32|sha1|sha256|sha512]}, ${2:[string]}, ${3:[flags=0 +1+2]});"},
 		{"trigger": "hexdump", "contents": "hexdump(${1:string}, ${2:[unicode=0]}, ${3:[switches=ri]});"},
 		{"trigger": "hextodec", "contents": "hextodec(${1:hexnumber});"},
