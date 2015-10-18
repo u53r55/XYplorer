@@ -17,6 +17,7 @@
 		{"trigger": "columnlayout", "contents": "columnlayout(${1:file}, ${2:[mode=load |save|get]});"},
 		{"trigger": "compare", "contents": "compare(${1:string1}, ${2:string2}, ${3:[method=b |i|n|v|d]});"},
 		{"trigger": "confirm", "contents": "confirm(${1:text}, ${2:[linebreaker=<br>]}, ${3:[DefaultButton=1 |2|3]}, ${4:[Buttons=1 |2|3|4]});"},
+		{"trigger": "controlatpos", "contents": "controlatpos(${1:[x]}, ${2:[y]}, ${3:[flags=0 |1]});"},
 		{"trigger": "copier", "contents": "copier(${1:[definition]});"},
 		{"trigger": "ctbicon", "contents": "ctbicon(${1:[icon]}, ${2:[button_index]});"},
 		{"trigger": "ctbname", "contents": "ctbname(${1:[name]}, ${2:[button_index]});"},
@@ -38,8 +39,8 @@
 		{"trigger": "formatbytes", "contents": "formatbytes(${1:bytes}, ${2:[format=FLEX |FLEXR|KB|MB|GB|TB|PB|BB|B|RAW]}, ${3:[decimals=-1 |count]});"},
 		{"trigger": "formatdate", "contents": "formatdate(${1:[date=now]}, ${2:[format]}, ${3:[shift_unit y|m|w|d|h|n|s]}, ${4:[shift_num]});"},
 		{"trigger": "formatlist", "contents": "formatlist(${1:list}, ${2:[format=tusrcnvxedfqp]}, ${3:[separator=|]}, ${4:[param]}, ${5:[flags= |f]});"},
-		// get() needs special treatment
-		{"trigger": "get", "contents": "get(${1:Alias|BytesSelected|BytesTotal|ClipboardFormats|CmdLine|CmdLineUser|CopiedData|CountIcons|CountItems|CountSelected|CurItem|CurItemPrev|Drop|DriveLetter|DriveName|Drives|Find_Contents|FocusedControl|FocusedPos|FreeSpace|GenericFileType|GVF|Instance|Item|List_CopyTo|List_HiliteFolder|List_RecentLocations|List_RecentlyOpenedFiles|MenuCaption|LoadTimes|Locale|Pane|Path|PropertyIndex|RegCmd|Screen|SelectedItemsPathNames|SelectedItemsNames|Sort|SpecialFolder|SpotPatterns|Status|Tabs|Tabs_SF|TargetItems|Tree|Trigger|UsedSpace|Username|UserRole|UTCOffset|View|VisualFilter|#CmdID}, ${2:[param1]}, ${3:[param2]});"},
+		// TODO: get() needs special treatment
+		{"trigger": "get", "contents": "get(${1:Alias|BytesSelected|BytesTotal|ClipboardFormats|CmdLine|CmdLineUser|CopiedData|CountIcons|CountItems|CountSelected|CurItem|CurItemPrev|Drop|DriveLetter|DriveName|Drives|Find_Contents|Find_QueryParsed|FocusedControl|FocusedPos|FreeSpace|GenericFileType|GVF|Instance|Item|List_CopyTo|List_HiliteFolder|List_RecentLocations|List_RecentlyOpenedFiles|MenuCaption|LoadTimes|Locale|Pane|Path|PropertyIndex|RegCmd|Screen|SelectedItemsPathNames|SelectedItemsNames|Sort|SpecialFolder|SpotPatterns|Status|Tabs|Tabs_SF|TargetItems|Tree|Trigger|UsedSpace|Username|UserRole|UTCOffset|View|VisualFilter|#CmdID}, ${2:[param1]}, ${3:[param2]});"},
 		{"trigger": "getinfo", "contents": "getinfo(${1:info}, ${2:[param1]}, ${3:[param2]}));"},
 		{"trigger": "getkey", "contents": "getkey(${1:key}, ${2:section}, ${3:[INI=<xyini>]}, ${4:[UseXyAlgo=0]});"},
 		{"trigger": "getpathcomponent", "contents": "getpathcomponent(${1:[path]}, ${2:[path |drive|parent|file|base|ext|server|count|component]}, ${3:[index=1]});"},
@@ -58,6 +59,7 @@
 		{"trigger": "inputselect", "contents": "inputselect(${1:header}, ${2:listdata}, ${3:[separator=|]}, ${4:[style=1 2+4+8+16+32+64 +128]}, ${5:[cancel]}, ${6:[width=600]}, ${7:[height=400]}, ${8:[caption]});"},
 		{"trigger": "isset", "contents": "isset(${1:$var});"},
 		{"trigger": "isunicode", "contents": "isunicode(${1:string}, ${2:[mindcodepage= 1]});"},
+		{"trigger": "itematpos", "contents": "itematpos(${1:[x]}, ${2:[y]}, ${3:[flags=0 |1]});"},
 		{"trigger": "listfolder", "contents": "listfolder(${1:[path]}, ${2:[pattern=*]}, ${3:[flags=0 +1+2+4+8+16+32]}, ${4:[separator=|]});"},
 		{"trigger": "listpane", "contents": "listpane(${1:[pane]}, ${2:[pattern=*]}, ${3:[flags=0 +1+2+4+8+16]}, ${4:[separator=|]});"},
 		{"trigger": "loadlayout", "contents": "loadlayout(${1:file}, ${2:[mode=load |save]});"},
@@ -202,6 +204,7 @@
 		{"trigger": "wipe", "contents": "wipe ${1:[itemlist]};"},
 		{"trigger": "writepv", "contents": "writepv ${1:[file]};"},
 
+		//undocumented SCs
 		{"trigger": "call", "contents": "call ${1:function};"},
 		{"trigger": "escapeunicode", "contents": "escapeunicode ${1:unicodestring};"},
 		{"trigger": "enumshellfolderitems", "contents": "enumshellfolderitems ${1:CSIDL=0}, ${2:[propindex]}, ${3:[showpath=0]};"},
@@ -213,8 +216,6 @@
 		{"trigger": "screen", "contents": "screen $1;"},
 		{"trigger": "edittags", "contents": "edittags $1;"},
 		{"trigger": "wmcopydata", "contents": "wmcopydata $1;"},
-
-
 
 		// Native Variables
 		{ "trigger": "get\t<get>", "contents": "<get ${1:info} ${2:[param1]} ${3:[param2]}>"},
@@ -231,6 +232,7 @@
 		{ "trigger": "cc_isfolder\t<cc_isfolder>", "contents": "<cc_isfolder>"},
 		{ "trigger": "crlf\t<crlf>", "contents": "<crlf$1>"},
 		{ "trigger": "tab\t<tab>", "contents": "<tab$1>"},
+		{ "trigger": "clp\t<clp>", "contents": "<clp>"},
 		{ "trigger": "clipboard\t<clipboard>", "contents": "<clipboard>"},
 		{ "trigger": "drop\t<drop>", "contents": "<drop$1>"},
 		{ "trigger": "hwnd\t<hwnd>", "contents": "<hwnd>"},
@@ -255,11 +257,8 @@
 		{ "trigger": "xytagdat\t<xytagdat>", "contents": "<xytagdat>"},
 		{ "trigger": "xythumbs\t<xythumbs>", "contents": "<xythumbs>"},
 		{ "trigger": "xycatalogs\t<xycatalogs>", "contents": "<xycatalogs>"},
-		{ "trigger": "base\t<base>", "contents": "<base>"},
-		{ "trigger": "title\t<title>", "contents": "<title>"},
-		{ "trigger": "item\t<item>", "contents": "<item$1>"}, //numbered items
-		{ "trigger": "items\t<items>", "contents": "<items>"},
 		{ "trigger": "pfaitem\t<pfaitem>", "contents": "<pfaitem>"},
+		{ "trigger": "pfaitems\t<pfaitems>", "contents": "<pfaitems>"},
 		{ "trigger": "focitem\t<focitem>", "contents": "<focitem>"},
 		{ "trigger": "allitems\t<allitems>", "contents": "<allitems$1>"},
 		{ "trigger": "selitem\t<selitem>", "contents": "<selitem>"},
@@ -280,6 +279,11 @@
 		{ "trigger": "curpath_dos\t<curpath_dos>", "contents": "<curpath_dos>"},
 		{ "trigger": "curpath_s\t<curpath_s>", "contents": "<curpath_s>"},
 		{ "trigger": "curtab\t<curtab>", "contents": "<curtab>"},
+		//UDC openwith-only variables
+		{ "trigger": "item\t<item>", "contents": "<item$1>"}, //numbered items
+		{ "trigger": "items\t<items>", "contents": "<items>"},
+		{ "trigger": "base\t<base>", "contents": "<base>"},
+		{ "trigger": "title\t<title>", "contents": "<title>"},
 		// savethumb-only variables, should only activate inside savethumb
 		// { "trigger": "percent\t<percent>", "contents": "<percent>"},
 		// { "trigger": "width\t<width>", "contents": "<width>"},
@@ -289,8 +293,7 @@
 		// { "trigger": "widthall\t<widthall>", "contents": "<widthall>"},
 		// { "trigger": "heightall\t<heightall>", "contents": "<heightall>"},
 
-
-		// System Variables (default list)
+		// System Environment Variables (default list)
 		{"trigger": "allusersprofile\t%allusersprofile%", "contents": "%ALLUSERSPROFILE%"},
 		{"trigger": "appdata\t%appdata%", "contents": "%APPDATA%"},
 		{"trigger": "cd\t%cd%", "contents": "%CD%"},
@@ -338,8 +341,7 @@
 		{"trigger": "username\t%username%", "contents": "%USERNAME%"},
 		{"trigger": "userprofile\t%userprofile%", "contents": "%USERPROFILE%"},
 		{"trigger": "windir\t%windir%", "contents": "%WINDIR%"},
-
-		// XYplorer env. variables
+		// XYplorer-defined env.vars
 		{"trigger": "computer", "contents": "%computer%"},
 		{"trigger": "desktop", "contents": "%desktop%"},
 		{"trigger": "desktopreal", "contents": "%desktopreal%"},
@@ -356,10 +358,12 @@
 		{"trigger": "commondesktop", "contents": "%commondesktop%"},
 		{"trigger": "osbitness", "contents": "%osbitness%"},
 
+
 		// Pre-Processors
 		{"trigger": "namespace", "contents": "NAMESPACE ${1:name}"},
 		{"trigger": "include", "contents": "INCLUDE \"${1:inc\\inc.xyi}\";"},
 		{"trigger": "include_once", "contents": "INCLUDE_ONCE \"${1:inc\\inc.xyi}\";"},
+
 
 		// Operators
 		"LikeI",
@@ -371,9 +375,11 @@
 		"XOR",
 		"NOT",
 
+
 		// misc
 		{ "trigger": "DUAL", "contents": "DUAL:${1:path1}||${2:path2}"}
 	]
+	//TODO: scopes for QS, VF, CF patterns
 	// "scope" : "",
 	// "completions":
 	// [
