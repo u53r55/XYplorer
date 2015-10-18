@@ -30,7 +30,7 @@
 		{"trigger": "filesequal", "contents": "filesequal(${1:[file1]}, ${2:[file2]}, ${3:[algo= |md5|crc32|sha1|sha256|sha512]});"},
 		{"trigger": "filesize", "contents": "filesize(${1:[file]});"},
 		{"trigger": "filetype", "contents": "filetype(${1:[file]});"},
-		{"trigger": "flattenfolder", "contents": "flattenfolder(${1:[folder]}, ${2:[sep=<crlf>]}, ${3:[flags= |1]});"},
+		{"trigger": "flattenfolder", "contents": "flattenfolder(${1:[folder]}, ${2:[flags=s mpf]}, ${3:[sep_names=\"-\"]}, ${3:[sep_return=<crlf>});"},
 		{"trigger": "floor", "contents": "floor(${1:[number]});"},
 		{"trigger": "folderreport", "contents": "folderreport(${1:[type=dump |bcsv|ecsv|tree:tpl|dirs:tpl|files:tpl|items:tpl|dirsrel|filesrel|itemsrel|list]}, ${2:[target=c |r|f|u|p]}, ${3:[folder]}, ${4:[flags=ajprv]}, ${5:[outputfile]}, ${6:[separator=<crlf>]});"},
 		{"trigger": "foldersize", "contents": "foldersize(${1:[folder]}, ${2:[template=\"<d><f><b>\" |<d><f><b><r>]}, ${3:[recurse=1]});"},
