@@ -186,6 +186,7 @@
 		{"trigger": "setting", "contents": "setting ${1:name}, ${2:[value=1 |0|r|value]}, ${3:[permanent= |p]};"},
 		{"trigger": "settingp", "contents": "settingp ${1:name}, ${2:[value=1 |0|r|value]};"},
 		{"trigger": "showhash", "contents": "showhash ${1:[file]};"},
+		{"trigger": "showintree", "contents": "showintree ${1:[path=<curpath>]};"},
 		{"trigger": "showshellprops", "contents": "showshellprops ${1:[item]};"},
 		{"trigger": "snippet", "contents": "snippet ${1:[snippettext]};"},
 		{"trigger": "sortby", "contents": "sortby ${1:[column]}, ${2:[order= |a|d|clk]}, ${3:[secondary_sort=0]};"},
