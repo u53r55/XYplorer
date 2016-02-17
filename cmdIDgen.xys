@@ -11,6 +11,7 @@
   $strings = $strings.<crlf>.'"#14xx": "User Defined Commands"';                         //add udc cmds placeholder
   text <<<#>>>
   remember to strip 231-236 (New item tpls) + 303...314 (thumbsizes) + 141-146,158-159 (id3 rename tpls)
-  + 594,595 (Userprofile name)+ 862-867 (lbl names) + 442...464 (dates) + > 1400 (UDC)#>>>.<crlf>.$strings;
+  + 594,595 (Userprofile name)+ 862-867 (lbl names) + 442...464 (dates) + 444-449,462-463 (date/time tpls)
+  + > 1400 (UDC)#>>>.<crlf>.$strings;
   writefile($output, $strings, o);                                                      //overwrite
   open $output;                                                                         //open output for touchups
