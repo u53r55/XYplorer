@@ -1,10 +1,10 @@
 <snippet>
-	<content>
+  <content>
 <![CDATA[<<<${1:HEREDOC}
 $2
 ${1:HEREDOC};]]>
-	</content>
-	<tabTrigger>heredoc</tabTrigger>
-	<scope>source.xys</scope>
-	<description>HEREDOC</description>
+  </content>
+  <tabTrigger>heredoc</tabTrigger>
+  <scope>source.xys</scope>
+  <description>HEREDOC</description>
 </snippet>

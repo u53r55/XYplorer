@@ -1,14 +1,14 @@
 {
-	"extensions":["xys", "xyi"],
-	// "default_encoding": "UTF-8",
-	"default_encoding": "UTF-16 LE with BOM",
-	"default_line_ending": "windows",
-	"ensure_newline_at_eof_on_save": true, //helps with include files
-	"match_brackets_angle": true,
-	"translate_tabs_to_spaces": false,
-	"tab_size": 2,
-	"word_wrap": false,
-	"word_separators": "./\\()\"'-:,.;>~!@#^&*|+=[]{}`~?",  //removed < $ % compared to defaults, for triggering auto-completion
-	"xypath": "C:\\Program Files\\XYplorer",
-	"xyscripts": "%APPDATA%\\XYplorer\\Data\\scripts"
+  "extensions":["xys", "xyi"],
+  // "default_encoding": "UTF-8",
+  "default_encoding": "UTF-16 LE with BOM",
+  "default_line_ending": "windows",
+  "ensure_newline_at_eof_on_save": true, //helps with include files
+  "match_brackets_angle": true,
+  "translate_tabs_to_spaces": false,
+  "tab_size": 2,
+  "word_wrap": false,
+  "word_separators": "./\\()\"'-:,.;>~!@#^&*|+=[]{}`~?",  //removed < $ % compared to defaults, for triggering auto-completion
+  "xypath": "C:\\Program Files\\XYplorer",
+  "xyscripts": "%APPDATA%\\XYplorer\\Data\\scripts"
 }

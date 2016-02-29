@@ -1,11 +1,11 @@
 <snippet>
-	<content>
+  <content>
 <![CDATA[while (${1:\$c >= 0}) {
-	$2;
-	${3:\$c--};
+  $2;
+  ${3:\$c--};
 }]]>
-	</content>
-	<tabTrigger>while</tabTrigger>
-	<scope>source.xys</scope>
-	<description>while block</description>
+  </content>
+  <tabTrigger>while</tabTrigger>
+  <scope>source.xys</scope>
+  <description>while block</description>
 </snippet>

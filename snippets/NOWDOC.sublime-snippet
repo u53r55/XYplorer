@@ -1,10 +1,10 @@
 <snippet>
-	<content>
+  <content>
 <![CDATA[<<<'${1:NOWDOC}'
 $2
 ${1:NOWDOC};]]>
-	</content>
-	<tabTrigger>nowdoc</tabTrigger>
-	<scope>source.xys</scope>
-	<description>NOWDOC</description>
+  </content>
+  <tabTrigger>nowdoc</tabTrigger>
+  <scope>source.xys</scope>
+  <description>NOWDOC</description>
 </snippet>

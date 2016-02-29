@@ -1,42 +1,42 @@
 [
-	{
-		"id": "preferences",
-		"children":
-		[
-			{
-				"caption": "Package Settings",
-				"id": "package-settings",
-				"children":
-				[
-					{
-						"caption": "XYplorer",
-						"children":
-						[
-							{
-								"command": "open_file",
-								"args": {"file": "${packages}/XYplorer/XYplorer.sublime-settings"},
-								"caption": "Settings – Default"
-							},
-							{
-								"command": "open_file",
-								"args": {"file": "${packages}/XYplorer/XYplorer.sublime-build"},
-								"caption": "Build Settings – Default"
-							},
-							{	"caption": "-", "id": "packagecommands"},
-							{
-								"command": "open_file",
-								"args": {"file": "${packages}/User/XYplorer.sublime-settings"},
-								"caption": "Settings – User"
-							},
-							{
-								"command": "open_file",
-								"args": {"file": "${packages}/User/XYplorer.sublime-build"},
-								"caption": "Build Settings – User"
-							}
-						]
-					}
-				]
-			}
-		]
-	}
+  {
+    "id": "preferences",
+    "children":
+    [
+      {
+        "caption": "Package Settings",
+        "id": "package-settings",
+        "children":
+        [
+          {
+            "caption": "XYplorer",
+            "children":
+            [
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/XYplorer/XYplorer.sublime-settings"},
+                "caption": "Settings – Default"
+              },
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/XYplorer/XYplorer.sublime-build"},
+                "caption": "Build Settings – Default"
+              },
+              { "caption": "-", "id": "packagecommands"},
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/User/XYplorer.sublime-settings"},
+                "caption": "Settings – User"
+              },
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/User/XYplorer.sublime-build"},
+                "caption": "Build Settings – User"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ]

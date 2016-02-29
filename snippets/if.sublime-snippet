@@ -1,10 +1,10 @@
 <snippet>
-	<content>
+  <content>
 <![CDATA[if (${1:expression}) {
-	$2;
+  $2;
 }]]>
-	</content>
-	<tabTrigger>if</tabTrigger>
-	<scope>source.xys</scope>
-	<description>if block</description>
+  </content>
+  <tabTrigger>if</tabTrigger>
+  <scope>source.xys</scope>
+  <description>if block</description>
 </snippet>

@@ -1,10 +1,10 @@
 <snippet>
-	<content>
+  <content>
 <![CDATA[else {
-	$1;
+  $1;
 }]]>
-	</content>
-	<tabTrigger>else</tabTrigger>
-	<scope>source.xys</scope>
-	<description>else block</description>
+  </content>
+  <tabTrigger>else</tabTrigger>
+  <scope>source.xys</scope>
+  <description>else block</description>
 </snippet>

@@ -1,10 +1,10 @@
 <snippet>
-	<content>
+  <content>
 <![CDATA[elseif (${1:expression}) {
-	$2;
+  $2;
 }]]>
-	</content>
-	<tabTrigger>elseif</tabTrigger>
-	<scope>source.xys</scope>
-	<description>elseif block</description>
+  </content>
+  <tabTrigger>elseif</tabTrigger>
+  <scope>source.xys</scope>
+  <description>elseif block</description>
 </snippet>
