@@ -35,7 +35,7 @@
 	  To include inc files, add an `extensions` key to XYplorer package user settings: `"extensions": ["inc"]`
 	+ Build-system integration is available. Doing `Tools > Build` will run the current script file in XYplorer.
 	+ **Contextual help**
-		- CTRL+ENTER triggers contextual help. Try it on everything: keywords, commandIDs, user-defined functions ...
+		- F1 triggers contextual help. Try it on everything: keywords, commandIDs, user-defined functions ...
 			+ Command ID: associated menu caption is displayed in statusbar
 			+ UDF, Namespace: Go to Definition/Declaration. (see UDF note below)
 			+ INCLUDE statement: goto included file (*remember to set corect 'xyscripts' path in package settings*)
