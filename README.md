@@ -6,33 +6,32 @@
 - ####INSTALL:
   + **With [Package Control](https://packagecontrol.io/)**
     - Open Command Palette (<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd>), pick `Package Control: Add Repository`
-    - Enter `https://github.com/SammaySarkar/XYplorer` as the Repository URL
+    - Enter `https://github.com/smsrkr/XYplorer` as the Repository URL
     - Now do `Package Control: Install Package`, search for and install `XYplorer`
   + **Without Package Control**
-    - Download this repo as [zip](https://github.com/SammaySarkar/XYplorer/archive/master.zip).
-      Extract and rename the *folder inside the zip file* to `XYplorer` and move to `Data\Packages\ `.
+    - Download this repo as [zip](https://github.com/smsrkr/XYplorer/archive/master.zip).
+      Extract and rename the *folder inside the zip file* to `XYplorer` and move to `Data\Packages\ `.<br>
+      Or go to `Data\Packages` and do `git clone https://github.com/smsrkr/XYplorer ./XYplorer`.
     - ALTERNATIVELY, and *only if running Sublime Text 3*, zip up *the contents inside* that `XYplorer` folder,
       rename the zip file to `XYplorer.sublime-package` and place it in `Data\Installed Packages\ `.
 
-
 - ####SETUP & USAGE:
   + Open XYplorer package user settings: `Preferences > Package Settings > XYplorer > Settings - User`
-  + Save the settings file with following content, using correct path to your XYplorer installation folder.
-  ```js
+  + Save the settings file with following content, using correct paths to your `<xypath>` and `<xyscripts>` folder.
+  ```json
   {
   "xypath": "P:\\ath\\to\\XYplorer"
   "xyscripts": "P:\\ath\\to\\XYScripts"
   }
   ```
   + Do the same with `Preferences > Package Settings > XYplorer > Build Settings - User` and this content.
-  ```js
+  ```json
   {
   "cmd": ["P:\\ath\\to\\XYplorer\\XYplorer.exe", "", "/script=$file", "/flg=2"],
   "selector": "source.xys"
   }
   ```
   + The highlighter automatically activates in `*.xys, *.xyi` files.
-    To include inc files, add an `extensions` key to XYplorer package user settings: `"extensions": ["inc"]`
   + Build-system integration is available. Doing `Tools > Build` will run the current script file in XYplorer.
   + **Contextual help**
     - F1 triggers contextual help. Try it on everything: keywords, commandIDs, user-defined functions ...
