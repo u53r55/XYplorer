@@ -79,7 +79,6 @@
 "#171": "File | File Special | Delete (Skip Locked)",
 "#172": "File | Rename",
 "#173": "File | Properties",
-"#174": "File | Preview",
 "#175": "File | File Special | Swap Names",
 "#176": "File | Open with...",
 "#177": "File | Quick File View",
@@ -480,6 +479,7 @@
 "#671": "Window | Show Breadcrumb Bar",
 "#672": "Window | Load Layout...",
 "#673": "Window | Save Layout As...",
+"#674": "Window | Show Preview Pane",
 "#680": "Window | Arrangement | - submenu -",
 "#681": "Window | Arrangement | Address Bar and Toolbar Stacked",
 "#682": "Window | Arrangement | Toolbar First",
@@ -651,4 +651,5 @@
 "#1076": "Miscellaneous | Focus Functions | Previous Type Ahead Match",
 "#1077": "Miscellaneous | Various | Toggle Instant Color Filter",
 "#1078": "Miscellaneous | Various | Reopen List Management",
-"#14xx": "User Defined Command"
+"#1079": "Miscellaneous | Preview | Freeze Info and Preview",
+"#14xx": "User Defined Commands"

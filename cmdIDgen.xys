@@ -1,17 +1,17 @@
 "Help > List all commands > Copy all items > XYplorer ST package cmdID.txt"
-  if (self('path') == '') {end 1, 'please run this script as a file in the XYplorer ST package source directory.';}
+  end !(self('path'), 'please run this script as a file in the XYplorer ST package source directory.';
   echo "Opening Commandlist. select ctx menu > Copy all items. Then esc/cancel the list dialog.";
   #705;                                                                                 //Help > List All Commands...
-  if (substr(<clipboard>, 0, 1) != '#') {end 1, 'clipboard is not command list, or excludes command IDs.'}
+  end (substr(<clipboard>, 0, 1) != '#'), 'clipboard is not command list, or excludes command IDs.';
   $output  = self('path')."\cmdIDs.txt";
   $strings = <clipboard>.<crlf>;                                                        //gets last line included in regexp
   $strings = regexreplace(<clipboard>.<crlf>, '(["\\])', '\$1');                        //escape string for py array declaration
-  $strings = regexreplace($strings, '^([^\t]+)\t([^\t\n]+).*(\r\n)', '"$1": "$2",$3');   //#100<tab>desc<tab>shortcut --> "#100": "desc",
-  $strings = formatlist($strings, 'enf', <crlf>, '!"[#]14##":*');                        //sort and remove user cmds
-  $strings = $strings.<crlf>.'"#14xx": "User Defined Commands"';                         //add udc cmds placeholder
+  $strings = regexreplace($strings, '^([^\t]+)\t([^\t\n]+).*(\r\n)', '"$1": "$2",$3');  //#100<tab>desc<tab>shortcut --> "#100": "desc",
+  $strings = formatlist($strings, 'enf', <crlf>, '!"[#]14##":*');                       //sort and remove user cmds
+  $strings = $strings.<crlf>.'"#14xx": "User Defined Commands"';                        //add udc cmds placeholder
   text <<<#>>>
-  remember to strip 231-236 (New item tpls) + 303...314 (thumbsizes) + 141-146,158-159 (id3 rename tpls)
-  + 594,595 (Userprofile name)+ 862-867 (lbl names) + 442...464 (dates) + 444-449,462-463 (date/time tpls)
-  + > 1400 (UDC)#>>>.<crlf>.$strings;
-  writefile($output, $strings, o);                                                      //overwrite
+  # remember to strip 231-236 (New item tpls) + 303...314 (thumbsizes) + 141-146,158-159 (id3 rename tpls)
+  # + 594,595 (Userprofile name)+ 862-867 (lbl names) + 442...464 (dates) + 444-449,462-463 (date/time tpls)
+  # + > 1400 (UDC)#>>>.<crlf>.$strings;
+  writefile($output, $strings, 'o');                                                      //overwrite
   open $output;                                                                         //open output for touchups
