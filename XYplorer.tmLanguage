@@ -142,6 +142,14 @@
 
     <dict>
       <key>name</key>
+      <string>constant.language.xys</string>
+      <key>match</key>
+      <string>(?i)\b(TRUE|FALSE)\b</string>
+      <!-- Simpler: \b(\d+)\b -->
+    </dict>
+
+    <dict>
+      <key>name</key>
       <string>keyword.operator.xys</string>
       <key>match</key>
       <string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI?\s|\sLikeI?\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?&lt;!\w)&gt;|&lt;(?![\w&lt;])|\B&amp;&amp;?\B)</string>
