@@ -61,7 +61,7 @@
     <dict>
       <key>match</key>
       <!--<string>(?i)^\s*(include(?:_once)?)\s+(.+?)\s*;?\s*$</string>-->
-            <string>(?i)^\s*(include(?:_once)?)\s+(&quot;[^&quot;]+&quot;|'[^']+'|(?!&quot;|')[^;]+(?!&quot;|'));?\s*</string>
+            <string>(?i)^\s*(include(?:_once)?)\s+(&quot;[^&quot;]+&quot;|'[^']+'|(?![&quot;'])[^;]+(?![&quot;']));?\s*</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -74,11 +74,6 @@
           <key>name</key>
           <string>string.other.INC.xys</string>
         </dict>
-        <key>3</key>
-        <dict>
-          <key>name</key>
-          <string>comment.line.xys</string>
-        </dict>
       </dict>
     </dict>
 
@@ -86,7 +81,7 @@
       <key>comment</key>
       <string>namespace definition</string>
       <key>match</key>
-      <string>(?i)^\s*(namespace)\s+(\w+)$</string>
+      <string>(?i)^\s*(namespace)\s+(&quot;([^&quot;]+)&quot;|'([^']+)'|(\w+))$</string>
       <key>captures</key>
       <dict>
         <key>1</key>
@@ -95,6 +90,21 @@
           <string>keyword.control.xys</string>
         </dict>
         <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>string.other.NS.xys</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>meta.class.NS.xys</string>
+        </dict>
+        <key>4</key>
+        <dict>
+          <key>name</key>
+          <string>meta.class.NS.xys</string>
+        </dict>
+        <key>5</key>
         <dict>
           <key>name</key>
           <string>meta.class.NS.xys</string>
