@@ -162,7 +162,8 @@
       <key>name</key>
       <string>keyword.operator.xys</string>
       <key>match</key>
-      <string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI?\s|\sLikeI?\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?&lt;!\w)&gt;|&lt;(?![\w&lt;])|\B&amp;&amp;?\B)</string>
+      <!-- <string>([\!)(){},]|[\*\+-\/\^%]|\sUnLikeI?\s|\sLikeI?\s|\sAND\s|\sOR\s|\sXOR\s|\sNOT\s|\s\|\|\s|\B-\B|=|\s+\.\s+|(?<!\w)>|<(?![\w<])|\B&&?\B)</string> -->
+      <string>([\|&amp;]{2}|(?:Un)?Like(?:I)?|AND|OR|NOT|XOR|[\-+.%&lt;&gt;^*\\\/!=]|)</string>
     </dict>
 
     <dict>
